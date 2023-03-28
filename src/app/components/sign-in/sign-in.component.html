@@ -2,21 +2,23 @@
   <div class="displayTableCell">
     <div class="authBlock">
       <h3>Sign In</h3>
-      <div class="formGroup">
-        <input type="text" class="formControl" placeholder="Username" #userName required>
+      <div class="s">
+        <mat-form-field>
+          <input matInput placeholder="Username" #userName required>
+        </mat-form-field>
       </div>
-      <div class="formGroup">
-        <input type="password" class="formControl" placeholder="Password" #userPassword required>
-      </div>
+      <div class="s">
+        <mat-form-field>
+          <input matInput type="password" placeholder="Password" #userPassword required>
+        </mat-form-field>
+     </div>
+
       <!-- Calling SignIn Api from AuthService -->
       <div class="formGroup">
-<!--        <input type="button" class="btn btnPrimary" value="Log in" (click)="authService.SignIn(userName.value, userPassword.value)">-->
-        <button mat-raised-button color="primary" (click)="authService.SignIn(userName.value, userPassword.value)">Log in</button>
+        <button mat-raised-button color="primary" (click)="authService.SignIn(userName.value, userPassword.value)">
+          Log in
+        </button>
       </div>
-      <div class="formGroup">
-        <span class="or"><span class="orInner">Or</span></span>
-      </div>
-      <!-- Calling GoogleAuth Api from AuthService -->
       <div class="formGroup">
         <button mat-raised-button color="warn" (click)="authService.GoogleAuth()">
           <i class="fab fa-google-plus-g"></i>
@@ -24,11 +26,55 @@
         </button>
       </div>
       <div class="forgotPassword">
-        <span routerLink="/forgot-password">Forgot Password?</span>
+        <span routerLink="/forgot-password">
+           <button mat-button color="primary">
+                   Forgot Password?
+           </button>
+        </span>
       </div>
     </div>
     <div class="redirectToLogin">
-      <span>Don't have an account?<span class="redirect" routerLink="/register-user"> Sign Up</span></span>
+      <span>Don't have an account?<span class="redirect" routerLink="/register-user">
+        <button mat-stroked-button color="primary">
+          Sign Up
+        </button>
+      </span>
+      </span>
     </div>
   </div>
 </div>
+
+<!--<div class="displayTable">-->
+<!--  <div class="displayTableCell">-->
+<!--    <div class="authBlock">-->
+<!--      <h3>Sign In</h3>-->
+<!--      <div class="formGroup">-->
+<!--        <input type="text" class="formControl" placeholder="Username" #userName required>-->
+<!--      </div>-->
+<!--      <div class="formGroup">-->
+<!--        <input type="password" class="formControl" placeholder="Password" #userPassword required>-->
+<!--      </div>-->
+<!--      &lt;!&ndash; Calling SignIn Api from AuthService &ndash;&gt;-->
+<!--      <div class="formGroup">-->
+<!--&lt;!&ndash;        <input type="button" class="btn btnPrimary" value="Log in" (click)="authService.SignIn(userName.value, userPassword.value)">&ndash;&gt;-->
+<!--        <button mat-raised-button color="primary" (click)="authService.SignIn(userName.value, userPassword.value)">Log in</button>-->
+<!--      </div>-->
+<!--      <div class="formGroup">-->
+<!--        <span class="or"><span class="orInner">Or</span></span>-->
+<!--      </div>-->
+<!--      &lt;!&ndash; Calling GoogleAuth Api from AuthService &ndash;&gt;-->
+<!--      <div class="formGroup">-->
+<!--        <button mat-raised-button color="warn" (click)="authService.GoogleAuth()">-->
+<!--          <i class="fab fa-google-plus-g"></i>-->
+<!--          Log in with Google-->
+<!--        </button>-->
+<!--      </div>-->
+<!--      <div class="forgotPassword">-->
+<!--        <span routerLink="/forgot-password">Forgot Password?</span>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="redirectToLogin">-->
+<!--      <span>Don't have an account?<span class="redirect" routerLink="/register-user"> Sign Up</span></span>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
