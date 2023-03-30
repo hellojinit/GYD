@@ -21,6 +21,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from "@angular/material/button";
 import {MatInputModule} from "@angular/material/input";
 import {MatCardModule} from "@angular/material/card";
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import {MatToolbarModule} from "@angular/material/toolbar";
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import {MatCardModule} from "@angular/material/card";
     SignInComponent,
     SignUpComponent,
     ForgotPasswordComponent,
-    VerifyEmailComponent
+    VerifyEmailComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +46,7 @@ import {MatCardModule} from "@angular/material/card";
     MatButtonModule,
     MatInputModule,
     MatCardModule,
+    MatToolbarModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
