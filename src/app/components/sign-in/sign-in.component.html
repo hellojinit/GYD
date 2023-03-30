@@ -16,7 +16,9 @@
       <!-- Calling SignIn Api from AuthService -->
       <div class="formGroup">
         <button mat-raised-button color="primary" (click)="authService.SignIn(userName.value, userPassword.value)">
+          <span class="redirect" routerLink="/register-user">
           Log in
+          </span>
         </button>
       </div>
       <div class="formGroup">
