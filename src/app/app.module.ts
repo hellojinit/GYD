@@ -23,6 +23,8 @@ import {MatInputModule} from "@angular/material/input";
 import {MatCardModule} from "@angular/material/card";
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatIconModule} from "@angular/material/icon";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import {MatToolbarModule} from "@angular/material/toolbar";
     MatInputModule,
     MatCardModule,
     MatToolbarModule,
+    MatIconModule,
+    FormsModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

@@ -9,23 +9,15 @@
   <div class="displayTableCell">
     <div class="authBlock">
       <h3>Sign Up</h3>
-      <div class="formGroup">
-        <input
-          type="email"
-          class="formControl"
-          placeholder="Email Address"
-          #userEmail
-          required
-        />
+      <div class="s">
+        <mat-form-field>
+          <input matInput placeholder="Username" #userName required>
+        </mat-form-field>
       </div>
-      <div class="formGroup">
-        <input
-          type="password"
-          class="formControl"
-          placeholder="Password"
-          #userPwd
-          required
-        />
+      <div class="s">
+        <mat-form-field>
+          <input matInput type="password" placeholder="Password" #userPassword required>
+        </mat-form-field>
       </div>
       <div class="formGroup">
         <button mat-raised-button color="primary" (click)="authService.SignUp(userName.value, userPassword.value)">
