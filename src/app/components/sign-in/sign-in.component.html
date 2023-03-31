@@ -1,17 +1,66 @@
-<div class="displayTable">
-  <div class="displayTableCell">
-    <div class="authBlock">
-      <h3>Sign In</h3>
-      <div class="s">
+<!-- Top navigation -->
+<div class="backgrounddd">
+  <mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with profile icon">
+      <mat-icon>share</mat-icon>
+    </button>
+    <span>GYD</span>
+  </mat-toolbar>
+
+  <mat-card>
+    <mat-card-content>
+      <form #loginForm="ngForm" (ngSubmit)="authService.SignIn(userName.value, userPassword.value)">
+        <h2>Log In</h2>
         <mat-form-field>
           <input matInput placeholder="Username" #userName required>
         </mat-form-field>
-      </div>
-      <div class="s">
         <mat-form-field>
           <input matInput type="password" placeholder="Password" #userPassword required>
         </mat-form-field>
-     </div>
+        <div class="actionbuttons">
+          <div class="flex-parent jc-center">
+            <button type="submit" mat-raised-button color="primary" (click)="authService.SignIn(userName.value, userPassword.value)" routerLink="/dashboard">
+              Login
+            </button>
+          </div>
+          <div class="flex-parent jc-center">
+            <button type="button" mat-raised-button color="warn" (click)="authService.GoogleAuth()" routerLink="/dashboard">
+              <i class="fab fa-google-plus-g"></i>
+              Log in with Google
+            </button>
+          </div>
+          <div class="flex-parent jc-center">
+            <button type="button" mat-button color="primary" routerLink="/forgot-password">
+              Forgot Password?
+            </button>
+          </div>
+          <div class="flex-parent jc-center">
+            <button type="button" mat-stroked-button color="primary" routerLink="/register-user">
+              Don't have an account? Sign Up
+            </button>
+          </div>
+        </div>
+
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+</div>
+
+<!--<div class="displayTable">-->
+<!--  <div class="displayTableCell">-->
+<!--    <div class="authBlock">-->
+<!--      <h3>Sign In</h3>-->
+<!--      <div class="s">-->
+<!--        <mat-form-field>-->
+<!--          <input matInput placeholder="Username" #userName required>-->
+<!--        </mat-form-field>-->
+<!--      </div>-->
+<!--      <div class="s">-->
+<!--        <mat-form-field>-->
+<!--          <input matInput type="password" placeholder="Password" #userPassword required>-->
+<!--        </mat-form-field>-->
+<!--     </div>-->
 
       <!-- Calling SignIn Api from AuthService -->
       <div class="formGroup">

@@ -1,3 +1,10 @@
+<!-- Top navigation -->
+<mat-toolbar color="primary">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with profile icon">
+    <mat-icon>share</mat-icon>
+  </button>
+  <span>GYD</span>
+</mat-toolbar>
 <div class="displayTable">
   <div class="displayTableCell">
     <div class="authBlock">
@@ -21,33 +28,29 @@
         />
       </div>
       <div class="formGroup">
-        <input
-          type="button"
-          class="btn btnPrimary"
-          value="Sign Up"
-          (click)="authService.SignUp(userEmail.value, userPwd.value)"
-        />
+        <button mat-raised-button color="primary" (click)="authService.SignUp(userName.value, userPassword.value)">
+          <span class="redirect" routerLink="/register-user">
+          Sign up
+          </span>
+        </button>
       </div>
       <div class="formGroup">
-        <span class="or"><span class="orInner">Or</span></span>
-      </div>
-      <!-- Continue with Google -->
-      <div class="formGroup">
-        <button
-          type="button"
-          class="btn googleBtn"
-          (click)="authService.GoogleAuth()"
-        >
+        <button mat-raised-button color="warn" (click)="authService.GoogleAuth()">
           <i class="fab fa-google-plus-g"></i>
           Continue with Google
         </button>
       </div>
-    </div>
+      <!-- Continue with Google -->
     <div class="redirectToLogin">
       <span
       >Already have an account?
-        <span class="redirect" routerLink="/sign-in">Log In</span></span
-      >
+        <span class="redirect" routerLink="/sign-in">
+      <button mat-stroked-button color="primary">
+        Log In
+      </button>
+        </span>
+      </span>
     </div>
   </div>
+</div>
 </div>

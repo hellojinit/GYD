@@ -5,6 +5,7 @@ import { AuthService } from '../../shared/services/auth.service';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
 })
+
 export class DashboardComponent implements OnInit {
   constructor(public authService: AuthService) {}
   ngOnInit(): void {}
