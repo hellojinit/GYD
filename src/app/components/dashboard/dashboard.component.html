@@ -16,10 +16,14 @@
 <form class="example-form">
   <mat-form-field class="text-field">
     <mat-label>Text for summarization</mat-label>
-    <textarea matInput></textarea>
+    <textarea matInput [(ngModel)]="textInput"></textarea>
   </mat-form-field>
   <mat-form-field class="text-field-output">
     <mat-label>Output for your text</mat-label>
-    <textarea matInput></textarea>
+<!--    [(ngModel)]="textOutput"-->
+    <textarea matInput [(ngModel)]="textOutput">{{textOutput}}</textarea>
   </mat-form-field>
+  <button mat-raised-button color="primary" (click)="onSubmit()">
+    Submit
+  </button>
 </form>
