@@ -1,5 +1,5 @@
 <!-- Top navigation -->
-<div class="backgrounddd">
+<!div class="backgrounddd">
   <mat-toolbar color="primary">
     <button mat-icon-button class="example-icon" aria-label="Example icon-button with profile icon">
       <mat-icon>share</mat-icon>
@@ -23,6 +23,9 @@
               Login
             </button>
           </div>
+          <div class="label">
+            <label id="dialog-user-name">Or</label>
+          </div>
           <div class="flex-parent jc-center">
             <button type="button" mat-raised-button color="warn" (click)="authService.GoogleAuth()" routerLink="/dashboard">
               <i class="fab fa-google-plus-g"></i>
@@ -45,7 +48,7 @@
     </mat-card-content>
   </mat-card>
 
-</div>
+<!/div>
 
 <!--<div class="displayTable">-->
 <!--  <div class="displayTableCell">-->

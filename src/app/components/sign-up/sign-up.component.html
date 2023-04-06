@@ -1,48 +1,46 @@
 <!-- Top navigation -->
-<mat-toolbar color="primary">
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with profile icon">
-    <mat-icon>share</mat-icon>
-  </button>
-  <span>GYD</span>
-</mat-toolbar>
-<div class="displayTable">
-  <div class="displayTableCell">
-    <div class="authBlock">
-      <h3>Sign Up</h3>
-      <div class="s">
+<div class="backgrounddd">
+  <mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with profile icon">
+      <mat-icon>share</mat-icon>
+    </button>
+    <span>GYD</span>
+  </mat-toolbar>
+
+  <mat-card>
+    <mat-card-content>
+      <form #loginForm="ngForm" (ngSubmit)="authService.SignIn(userName.value, userPassword.value)">
+        <h2>Sign Up</h2>
         <mat-form-field>
           <input matInput placeholder="Username" #userName required>
         </mat-form-field>
-      </div>
-      <div class="s">
         <mat-form-field>
           <input matInput type="password" placeholder="Password" #userPassword required>
         </mat-form-field>
-      </div>
-      <div class="formGroup">
-        <button mat-raised-button color="primary" (click)="authService.SignUp(userName.value, userPassword.value)">
-          <span class="redirect" routerLink="/register-user">
-          Sign up
-          </span>
-        </button>
-      </div>
-      <div class="formGroup">
-        <button mat-raised-button color="warn" (click)="authService.GoogleAuth()">
-          <i class="fab fa-google-plus-g"></i>
-          Continue with Google
-        </button>
-      </div>
-      <!-- Continue with Google -->
-    <div class="redirectToLogin">
-      <span
-      >Already have an account?
-        <span class="redirect" routerLink="/sign-in">
-      <button mat-stroked-button color="primary">
-        Log In
-      </button>
-        </span>
-      </span>
-    </div>
-  </div>
-</div>
+        <div class="actionbuttons">
+          <div class="flex-parent jc-center">
+            <button type="submit" mat-raised-button color="primary" (click)="authService.SignIn(userName.value, userPassword.value)" routerLink="/dashboard">
+              Sign Up
+            </button>
+          </div>
+          <div class="label">
+            <label id="dialog-user-name">Or</label>
+          </div>
+          <div class="flex-parent jc-center">
+            <button type="button" mat-raised-button color="warn" (click)="authService.GoogleAuth()" routerLink="/dashboard">
+              <i class="fab fa-google-plus-g"></i>
+              Sign Up With Google
+            </button>
+          </div>
+          <div class="flex-parent jc-center">
+            <button type="button" mat-stroked-button color="primary" routerLink="/sign-in">
+              Already Have an Account? Log In
+            </button>
+          </div>
+        </div>
+
+      </form>
+    </mat-card-content>
+  </mat-card>
+
 </div>
