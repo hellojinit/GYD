@@ -27,6 +27,7 @@ export class DashboardComponent implements OnInit{
   onSubmit() {
     const url = `api/summarize/${this.textInput}`;
     console.log('Submitted')
+    this.textOutput = 'Summarizing..'
     this.http.get(url).subscribe((response: any) => {
       console.log(response);
       this.textOutput = response.summary;
