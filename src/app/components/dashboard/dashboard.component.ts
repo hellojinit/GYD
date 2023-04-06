@@ -16,8 +16,8 @@ export class DashboardComponent implements OnInit{
   textOutput: string;
 
   constructor(
-    public authService: AuthService
-    // public http: HttpClient
+    public authService: AuthService,
+    private http: HttpClient
   ) {}
   //
   ngOnInit(): void {
@@ -25,12 +25,11 @@ export class DashboardComponent implements OnInit{
   }
   //
   onSubmit() {
-    const url = `https://text-summarization-model-jvgcexcekq-uc.a.run.app/summarize/`;
-    // this.http.get(url).subscribe((response: any) => {
-    //   console.log(response);
-  //     // Do something with the
-  //     // this.textOutput = response.data;
-  //   });
-    this.textOutput = "helloooo"
+    const url = `api/summarize/${this.textInput}`;
+    console.log('Submitted')
+    this.http.get(url).subscribe((response: any) => {
+      console.log(response);
+      this.textOutput = response.summary;
+    });
   }
 }

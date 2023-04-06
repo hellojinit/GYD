@@ -1,0 +1,13 @@
+{
+  "/api/*": {
+    "target": "https://text-summarization-model-jvgcexcekq-uc.a.run.app",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api": ""
+    },
+    "headers": {
+      "Access-Control-Allow-Origin": "*"
+    }
+  }
+}
