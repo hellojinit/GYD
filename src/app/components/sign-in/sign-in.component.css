@@ -3,6 +3,9 @@ mat-card {
   /*min-height: 50%;*/
   margin: 2em auto;
   text-align: center;
+  box-shadow: 10px 5px 10px rebeccapurple,
+  5px 10px 10px 5px rebeccapurple,
+  5px 10px 10px 5px rebeccapurple;
 }
 
 
