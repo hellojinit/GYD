@@ -9,7 +9,7 @@
 
   <mat-card>
     <mat-card-content>
-      <form #loginForm="ngForm" (ngSubmit)="authService.SignIn(userName.value, userPassword.value)">
+      <form #loginForm="ngForm" (ngSubmit)="authService.SignUp(userName.value, userPassword.value)">
         <h1>Sign Up</h1>
         <mat-form-field>
           <input matInput placeholder="Username" #userName required>
@@ -19,7 +19,7 @@
         </mat-form-field>
         <div class="actionbuttons">
           <div class="flex-parent jc-center">
-            <button type="submit" mat-raised-button color="primary" (click)="authService.SignIn(userName.value, userPassword.value)" routerLink="/dashboard">
+            <button type="submit" mat-raised-button color="primary" (click)="authService.SignUp(userName.value, userPassword.value)" routerLink="/home">
               Sign Up
             </button>
           </div>
@@ -27,7 +27,7 @@
             <label id="dialog-user-name">Or</label>
           </div>
           <div class="flex-parent jc-center">
-            <button type="button" mat-raised-button color="warn" (click)="authService.GoogleAuth()" routerLink="/dashboard">
+            <button type="button" mat-raised-button color="warn" (click)="authService.GoogleAuth()" routerLink="/home">
               <i class="fab fa-google-plus-g"></i>
               Sign Up With Google
             </button>

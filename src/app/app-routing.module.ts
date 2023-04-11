@@ -7,7 +7,7 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { KnowledgeGraphComponent } from './components/knowledge-graph/knowledge-graph.component';
-
+import { HomeComponent } from './components/home/home.component';
 // route guard
 import { AuthGuard } from './shared/guard/auth.guard';
 const routes: Routes = [
@@ -15,6 +15,7 @@ const routes: Routes = [
   { path: 'sign-in', component: SignInComponent },
   { path: 'register-user', component: SignUpComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'knowledge-graph', component: KnowledgeGraphComponent },
   { path: 'verify-email-address', component: VerifyEmailComponent },

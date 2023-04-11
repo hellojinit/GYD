@@ -19,6 +19,8 @@ mat-card {
 }
 h1 {
   color: rebeccapurple;
+  font-size: 30px;
+  font-weight: bold;
 }
 .label{
   color: rebeccapurple;

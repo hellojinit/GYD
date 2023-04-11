@@ -27,6 +27,7 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatIconModule} from "@angular/material/icon";
 import {FormsModule} from "@angular/forms";
 import { KnowledgeGraphComponent } from './components/knowledge-graph/knowledge-graph.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { KnowledgeGraphComponent } from './components/knowledge-graph/knowledge-
     ForgotPasswordComponent,
     VerifyEmailComponent,
     UserProfileComponent,
-    KnowledgeGraphComponent
+    KnowledgeGraphComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

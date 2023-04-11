@@ -6,6 +6,7 @@ import { HttpClient } from "@angular/common/http";
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
+
 })
 
 export class DashboardComponent implements OnInit{
@@ -24,6 +25,7 @@ export class DashboardComponent implements OnInit{
 
   }
   //
+
   onSubmit() {
     const url = `api/summarize/${this.textInput}`;
     console.log('Submitted')

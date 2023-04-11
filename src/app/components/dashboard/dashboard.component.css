@@ -4,7 +4,33 @@
 
 form {
   max-width: 80%;
-  /*min-height: 50%;*/
   margin: 2em auto;
   text-align: center;
+}
+
+.ubutton {
+  margin-left: -63.8%;
+}
+.obuttons {
+  margin-top: -2%;
+  margin-left: 51.3%;
+}
+.actionbuttons button{
+  margin-right: 1%;
+}
+
+.actionbuttons {
+  padding-left: 1.7%;
+}
+
+.text textarea{
+  margin-right: 3%;
+}
+
+.text {
+  padding-right: 0%;
+}
+
+.text-field {
+  margin-right: 1%;
 }

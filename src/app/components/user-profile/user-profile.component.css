@@ -1,51 +1,15 @@
 .example-spacer {
   flex: 1 1 auto;
 }
+
+h1 { font-size: 25px;}
 mat-card {
   max-width: 30%;
   /*min-height: 50%;*/
   margin: 2em auto;
   text-align: center;
+  font-size: 18px;
   box-shadow: 5px 5px 10px rebeccapurple,
   5px 5px 10px 5px rebeccapurple,
   5px 5px 10px 5px rebeccapurple;
 }
-
-
-.actionbuttons {
-  padding-bottom: 3%;
-  /*justify-content: center;*/
-
-}
-
-.actionbuttons button{
-  display: block;
-  /*justify-content: center;*/
-  text-align: center;
-  margin-bottom: 2.5%;
-}
-
-mat-form-field {
-  display: block;
-}
-
-.flex-parent {
-  display: flex;
-}
-
-
-.label{
-  color: rebeccapurple;
-  padding-bottom: 2%;
-}
-
-.jc-center {
-  justify-content: center;
-}
-
-.backgrounddd {
-  min-height: 100%;
-  /*min-height: 100%;*/
-  background: linear-gradient(#e66465, #9198e5);
-}
-

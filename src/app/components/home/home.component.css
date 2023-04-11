@@ -1,0 +1,21 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+h1 {
+  padding-top: 10%;
+  font-size: 50px;
+}
+h2 {
+  padding-top: 2%;
+  font-size: 30px;
+}
+.form {
+  padding-top: 3%;
+  text-align: center;
+}
+
+.large-button {
+  font-size: 24px;
+  padding: 16px 32px;
+}

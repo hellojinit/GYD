@@ -1,49 +1,31 @@
 <!-- Top navigation -->
 <mat-toolbar color="primary">
-  <button mat-icon-button class="example-icon"  routerLink="/dashboard">
+  <button mat-icon-button class="example-icon" routerLink="/home">
     <mat-icon>share</mat-icon>
   </button>
-  <span><span class="redirect" routerLink="/dashboard">GYD</span></span>
+  <span><span class="redirect" routerLink="/home">GYD</span></span>
   <span class="example-spacer">
   </span>
   <!--  <span>Log out</span>-->
   <button mat-button color="white" (click)="authService.SignOut()">Log Out</button>
-  <button mat-icon-button class="example-icon"  routerLink="/profile">
+  <button mat-icon-button class="example-icon" routerLink="/profile">
     <mat-icon>person</mat-icon>
   </button>
 </mat-toolbar>
 
 
-
 <mat-card>
   <mat-card-content>
-<!-- Sidebar navigation -->
-<div class="container-fluid">
-  <div class="row">
-    <!-- Main content -->
-    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-      <div class="inner-adjust">
-        <div class="pt-3 pb-2 mb-3 border-bottom">
-          <h1 class="h2">User Profile</h1>
-        </div>
-        <!-- Show user data when logged in -->
-        <div class="row" *ngIf="authService.userData as user">
-          <div class="col-md-12">
-            <div class="media">
-              <img class="align-self-start mr-5 img-thumbnail rounded-circle" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}"
-                   alt="{{user.displayName}}">
-              <div class="media-body">
-                <h2>Hello: <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h2>
-                <p>User ID: <strong>{{user.uid}}</strong></p>
-                <p>Email: <strong>{{user.email}}</strong></p>
-                <p>Email Verified: <strong>{{user.emailVerified}}</strong></p>
+    <form>
+          <!-- Main content -->
+            <h1> User Profile</h1>
+            <!-- Show user data when logged in -->
+            <div class="row" *ngIf="authService.userData as user">
+                <h2>Hello, {{(user.displayName) ? user.displayName : 'User'}}</h2>
+                <p>User ID: <b>{{user.uid}}</b></p>
+                <p>Email: <b>{{user.email}}</b></p>
+                <p>Email Verified: <b>{{user.emailVerified}}</b></p>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
-  </div>
-</div>
-</mat-card-content>
+    </form>
+  </mat-card-content>
 </mat-card>

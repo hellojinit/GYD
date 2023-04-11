@@ -1,9 +1,9 @@
 <!-- Top navigation -->
 <mat-toolbar color="primary">
-  <button mat-icon-button class="example-icon"  routerLink="/dashboard">
+  <button mat-icon-button class="example-icon"  routerLink="/home">
     <mat-icon>share</mat-icon>
   </button>
-  <span><span class="redirect" routerLink="/dashboard">GYD</span></span>
+  <span><span class="redirect" routerLink="/home">GYD</span></span>
   <span class="example-spacer">
   </span>
   <!--  <span>Log out</span>-->
@@ -14,19 +14,33 @@
 </mat-toolbar>
 
 <form class="example-form">
-  <mat-form-field class="text-field">
-    <mat-label>Text for summarization</mat-label>
-    <textarea matInput [(ngModel)]="textInput" name="input" rows="18"></textarea>
-  </mat-form-field>
-  <mat-form-field class="text-field-output">
-    <mat-label>Output for your text</mat-label>
-    <textarea matInput [(ngModel)]="textOutput" name="output">{{textOutput}}</textarea>
-  </mat-form-field>
-  <button mat-raised-button color="primary" (click)="onSubmit()">
-    Summarize!
-  </button>
-  <button mat-raised-button color="primary" routerLink="/knowledge-graph">
-    Knowledge Graph!
-  </button>
+  <div class = "text">
+    <mat-form-field class="text-field" style="width: 35%">
+      <mat-label>Text for summarization</mat-label>
+      <textarea  matInput [(ngModel)]="textInput" name="input" rows="18" cols = "10"></textarea>
+    </mat-form-field>
+    <mat-form-field class="text-field-output"  style="width: 35%">
+      <mat-label>Output for your text</mat-label>
+      <textarea matInput [(ngModel)]="textOutput" name="output" rows="18" cols = "10">{{textOutput}}</textarea>
+    </mat-form-field>
+  </div>
+  <div class="actionbuttons">
+    <div class="ubutton">
+      <button mat-raised-button color="accent" (click)="onSubmit()">
+        Upload a text file
+      </button>
+    </div>
+    <div class="obuttons">
+    <button mat-raised-button color="primary" (click)="onSubmit()">
+      Summarize!
+    </button>
+    <button mat-raised-button color="primary" routerLink="/knowledge-graph">
+      Knowledge Graph!
+    </button>
+    <button mat-raised-button color="warn" routerLink="/knowledge-graph">
+      Both!
+    </button>
+    </div>
+  </div>
 </form>
 
