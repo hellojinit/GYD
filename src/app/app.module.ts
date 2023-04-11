@@ -16,6 +16,7 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+
 import { AuthService } from "./shared/services/auth.service";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from "@angular/material/button";
@@ -25,6 +26,7 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatIconModule} from "@angular/material/icon";
 import {FormsModule} from "@angular/forms";
+import { KnowledgeGraphComponent } from './components/knowledge-graph/knowledge-graph.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import {FormsModule} from "@angular/forms";
     SignUpComponent,
     ForgotPasswordComponent,
     VerifyEmailComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    KnowledgeGraphComponent
   ],
   imports: [
     BrowserModule,

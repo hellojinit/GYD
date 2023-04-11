@@ -16,7 +16,7 @@
 <form class="example-form">
   <mat-form-field class="text-field">
     <mat-label>Text for summarization</mat-label>
-    <textarea matInput [(ngModel)]="textInput" name="input"></textarea>
+    <textarea matInput [(ngModel)]="textInput" name="input" rows="18"></textarea>
   </mat-form-field>
   <mat-form-field class="text-field-output">
     <mat-label>Output for your text</mat-label>
@@ -25,4 +25,8 @@
   <button mat-raised-button color="primary" (click)="onSubmit()">
     Summarize!
   </button>
+  <button mat-raised-button color="primary" routerLink="/knowledge-graph">
+    Knowledge Graph!
+  </button>
 </form>
+

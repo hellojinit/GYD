@@ -19,6 +19,7 @@
     }
   ],
   "hosting": {
+    "site": "gyd",
     "public": "public",
     "ignore": [
       "firebase.json",
