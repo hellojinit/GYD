@@ -28,7 +28,12 @@ import {MatIconModule} from "@angular/material/icon";
 import {FormsModule} from "@angular/forms";
 import { KnowledgeGraphComponent } from './components/knowledge-graph/knowledge-graph.component';
 import { HomeComponent } from './components/home/home.component';
+import { LottieModule } from 'ngx-lottie';
+import player from 'lottie-web';
 
+export function playerFactory(): any {
+  return import('lottie-web');
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,6 +62,7 @@ import { HomeComponent } from './components/home/home.component';
     MatToolbarModule,
     MatIconModule,
     FormsModule,
+    LottieModule.forRoot({ player: playerFactory }),
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

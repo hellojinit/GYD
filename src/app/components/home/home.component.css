@@ -3,7 +3,7 @@
 }
 
 h1 {
-  padding-top: 10%;
+  padding-top: 3%;
   font-size: 50px;
 }
 h2 {
@@ -17,5 +17,36 @@ h2 {
 
 .large-button {
   font-size: 24px;
-  padding: 16px 32px;
+  padding-bottom: 2%;
+}
+
+.creators {
+  padding-top: 1%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.text {
+  flex: 1;
+  text-align: center;
+  margin: 0 10px;
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 25px;
+  color: rebeccapurple
+}
+
+:host {
+  overflow: hidden;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.use {
+  padding-top: 2%;
 }

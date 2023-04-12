@@ -13,6 +13,13 @@
   </button>
 </mat-toolbar>
 
+
+<div class="lottie-animation mt-10">
+  <ng-lottie
+    [options]="options"
+    (animationCreated)="onAnimate($event)">
+  </ng-lottie>
+</div>
 <h1> Welcome to GYD</h1>
   <h2> Our tool takes your input, ranging from written text to uploaded files, and generates text summarization or knowledge graphs </h2>
   <div class = "form">
@@ -20,3 +27,39 @@
       Use GYD
     </button>
   </div>
+  <div class = "use">
+    <h1>Our Services</h1>
+  </div>
+    <h1>About us</h1>
+    <h2>Creators:</h2>
+    <div class="creators">
+      <div class = "text">
+        <h4>Jinit Shah</h4>
+        <p>Senior at Virginia Tech</p>
+        <p>Major: CS and Applied Discrete Math</p>
+      </div>
+      <div class = "text">
+        <h4>Shalini Dubey</h4>
+        <p>Junir at Virginia Tech</p>
+        <p>Major: Computer Science</p>
+      </div>
+      <div class = "text">
+        <h4>Moamen Moustafa</h4>
+        <p>Junior at Alamein International University</p>
+        <p>Major: Artificial Intelligence</p>
+      </div>
+      <div class = "text">
+        <h4>Youssef Ahmed</h4>
+        <p>Junior at Alamein International University</p>
+        <p>Major: Software Engineering</p>
+      </div>
+      <div class = "text">
+        <h4>Ahmed Shokr</h4>
+        <p>Junior at Alamein International University</p>
+        <p>Major: Software Engineering</p>
+      </div>
+    </div>
+
+
+
+
