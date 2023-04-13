@@ -18,8 +18,11 @@ h2 {
 }
 
 .large-button {
-  font-size: 24px;
-  padding-bottom: 2%;
+  font-size: 30px;
+  width: 200px;
+  height: 100px;
+  font-family: "copperplate";
+  /*padding-bottom: 2%;*/
 }
 
 .creators {
@@ -27,12 +30,15 @@ h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 90%;
 }
+
 .text {
   flex: 1;
   text-align: center;
   margin: 0 10px;
   font-size: 20px;
+  justify-content: center;
 }
 
 h4 {
@@ -52,3 +58,17 @@ h4 {
 .use {
   padding-top: 2%;
 }
+
+/*.circle {*/
+/*  width: 200px;*/
+/*  height: 200px;*/
+/*  margin-left: 75px;*/
+/*  border-radius: 50%;*/
+/*  background-color: rebeccapurple;*/
+/*}*/
+.image {
+  align-items: center;
+  width: 25%;
+  height: 25%;
+}
+

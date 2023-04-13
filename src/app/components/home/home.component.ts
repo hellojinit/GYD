@@ -21,7 +21,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
 
+
   }
+
+
 
   // This is the component function that binds to the animationCreated event from the package
   onAnimate(animationItem: AnimationItem): void {
