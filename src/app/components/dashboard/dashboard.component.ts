@@ -12,9 +12,13 @@ import { HttpClient } from "@angular/common/http";
 export class DashboardComponent implements OnInit{
 
   // @ts-ignore
-  textInput: string;
+  textInput: string | ArrayBuffer | null;
   // @ts-ignore
   textOutput: string;
+
+  loading: boolean = false;
+  // @ts-ignore
+  file: File = null;
 
   constructor(
     public authService: AuthService,
@@ -24,7 +28,23 @@ export class DashboardComponent implements OnInit{
   ngOnInit(): void {
 
   }
-  //
+
+  onChange(event: any) {
+    console.log(event.target.files[0])
+    this.file = event.target.files[0]
+  }
+  onUpload() {
+    console.log(this.file);
+    if (this.file) {
+      alert("Uploaded")
+      const reader = new FileReader();
+      reader.readAsText(this.file);
+      this.textInput = reader.result;
+    } else {
+      this.loading = !this.loading
+      // alert("Please select a file first")
+    }
+  }
 
   onSubmit() {
     const url = `api/summarize/${this.textInput}`;
