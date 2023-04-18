@@ -1,4 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+ You can add global styles to this file, and also import other style files
 
 html, body {
   height: 100%;
@@ -22,13 +22,3 @@ h2 {
   font-family: Copperplate, sans-serif;
 }
 
-
-#particles-js{
-  width: 100%;
-  height: 100%;
-  background-color: #111111;
-  /*background-image: url('');*/
-  background-size: cover;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-}
