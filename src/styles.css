@@ -1,12 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%;
-background-color: lavender }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
+html, body {
+  height: 100%;
+  /*background-size: cover;*/
+  /*background: linear-gradient(to bottom right, black,rebeccapurple, black, rebeccapurple) no-repeat fixed;*/
+  color: #fff; /* set text color to white for contrast */
+  background: radial-gradient(circle, #48088b, black);
+
+
+}
+body {
+  margin: 0;
+  font-family: Copperplate, sans-serif;
+}
 h1 {
   text-align: center;
-  color: rebeccapurple;
+  color: white;
+  font-family: Copperplate, sans-serif;
 }
 h2 {
   text-align: center;
+}
+
+
+#particles-js{
+  width: 100%;
+  height: 100%;
+  background-color: #111111;
+  /*background-image: url('');*/
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
 }

@@ -21,7 +21,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
 
-
   }
 
 
@@ -32,5 +31,8 @@ export class HomeComponent implements OnInit {
     // animationItem.stop();
   }
 }
+
+
+
 
 
