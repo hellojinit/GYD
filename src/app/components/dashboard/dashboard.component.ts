@@ -12,7 +12,7 @@ import { HttpClient } from "@angular/common/http";
 export class DashboardComponent implements OnInit{
 
   // @ts-ignore
-  textInput: string | ArrayBuffer | null;
+  textInput: string;
   // @ts-ignore
   textOutput: string;
 
@@ -28,7 +28,6 @@ export class DashboardComponent implements OnInit{
   ngOnInit(): void {
 
   }
-
   onChange(event: any) {
     console.log(event.target.files[0])
     this.file = event.target.files[0]
@@ -37,9 +36,9 @@ export class DashboardComponent implements OnInit{
     console.log(this.file);
     if (this.file) {
       alert("Uploaded")
-      const reader = new FileReader();
-      reader.readAsText(this.file);
-      this.textInput = reader.result;
+      // const reader = new FileReader();
+      // reader.readAsText(this.file);
+      // console.log(reader.result);
     } else {
       this.loading = !this.loading
       // alert("Please select a file first")

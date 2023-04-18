@@ -27,11 +27,16 @@
             "styles": [
               "@angular/material/prebuilt-themes/deeppurple-amber.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.css"
+              "src/styles.css",
+              "src/app/components/home/helper/particles/helpercss.css"
             ],
             "scripts": [
-              "src/app/components/home/helper/particles.js",
-              "src/app/components/home/helper/helper.js"
+              "src/app/components/home/helper/particles/particles.js",
+              "src/app/components/home/helper/particles/helper.js",
+              "/node_modules/jquery/dist/jquery.min.js",
+              "/node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+
             ]
           },
           "configurations": {

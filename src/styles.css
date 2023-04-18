@@ -4,10 +4,9 @@ html, body {
   height: 100%;
   /*background-size: cover;*/
   /*background: linear-gradient(to bottom right, black,rebeccapurple, black, rebeccapurple) no-repeat fixed;*/
-  color: #fff; /* set text color to white for contrast */
-  background: radial-gradient(circle, #48088b, black);
-
-
+  color: #ffffff; /* set text color to white for contrast */
+  /*background: radial-gradient(circle, #48088b, black);*/
+  font-weight: lighter;
 }
 body {
   margin: 0;
