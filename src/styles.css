@@ -4,7 +4,7 @@ html, body {
   height: 100%;
   /*background-size: cover;*/
   /*background: linear-gradient(to bottom right, black,rebeccapurple, black, rebeccapurple) no-repeat fixed;*/
-  color: #ffffff; /* set text color to white for contrast */
+  color: black; /* set text color to white for contrast */
   /*background: radial-gradient(circle, #48088b, black);*/
   font-weight: lighter;
 }
@@ -14,7 +14,7 @@ body {
 }
 h1 {
   text-align: center;
-  color: white;
+  color: black;
   font-family: Copperplate, sans-serif;
 }
 h2 {
