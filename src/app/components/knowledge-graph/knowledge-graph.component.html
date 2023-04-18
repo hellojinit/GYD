@@ -1,16 +1,18 @@
 <!-- Top navigation -->
-<mat-toolbar color="primary">
-  <button mat-icon-button class="example-icon"  routerLink="/home">
-    <mat-icon>share</mat-icon>
-  </button>
-  <span><span class="redirect" routerLink="/home">GYD</span></span>
-  <span class="example-spacer">
+<div class="topmost">
+  <mat-toolbar color="primary">
+    <button mat-button class="example-icon"  routerLink="/home">
+      <mat-icon>share</mat-icon> GYD
+    </button>
+    <!--  <span><span class="redirect" routerLink="/home">GYD</span></span>-->
+    <span class="example-spacer">
   </span>
-  <!--  <span>Log out</span>-->
-  <button mat-button color="white" (click)="authService.SignOut()">Log Out</button>
-  <button mat-icon-button class="example-icon"  routerLink="/profile">
-    <mat-icon>person</mat-icon>
-  </button>
-</mat-toolbar>
+    <!--  <span>Log out</span>-->
+    <button mat-button color="white" (click)="authService.SignOut()">Log Out</button>
+    <button mat-button class="example-icon"  routerLink="/profile">
+      <mat-icon>person</mat-icon>
+    </button>
+  </mat-toolbar>
+</div>
 
 <p>knowledge-graph will be shown here</p>

@@ -54,8 +54,8 @@ export class AuthService {
       .then((result) => {
         /* Call the SendVerificaitonMail() function when new user sign
         up and returns promise */
-        this.SendVerificationMail();
         this.SetUserData(result.user);
+        this.SendVerificationMail();
       })
       .catch((error) => {
         window.alert(error.message);
@@ -88,7 +88,12 @@ export class AuthService {
   // Sign in with Google
   GoogleAuth() {
     return this.AuthLogin(new auth.GoogleAuthProvider()).then((res: any) => {
-      this.router.navigate(['home']);
+      this.SetUserData(res.user);
+      this.afAuth.authState.subscribe((user) => {
+        if (user) {
+          this.router.navigate(['home']);
+        }
+      });
     });
   }
   // Auth logic to run auth providers
@@ -96,8 +101,8 @@ export class AuthService {
     return this.afAuth
       .signInWithPopup(provider)
       .then((result) => {
-        this.router.navigate(['home']);
         this.SetUserData(result.user);
+        this.router.navigate(['home']);
       })
       .catch((error) => {
         window.alert(error);
