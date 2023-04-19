@@ -21,6 +21,7 @@ export class UserProfileComponent implements OnInit {
     userHistoryRef.get().subscribe(querySnapshot => {
       querySnapshot.forEach(doc => {
         doc.ref.delete().then(() => {
+          alert("Your history has been successfully deleted!");
           console.log('User history deleted from Firestore successfully.');
         })
           .catch((error) => {
