@@ -15,6 +15,9 @@
   </mat-toolbar>
 </div>
 <!--<body>-->
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
+</head>
 
 <!-- scripts -->
 <!--<script ></script>-->
@@ -29,6 +32,14 @@
       </div>
     </button>
   </div>
+</div>
+
+<div id="scroll-down-arrow">
+  <a href="#content"><i class="fas fa-angle-down"></i></a>
+</div>
+
+<div id="content">
+  <!-- your website content here -->
 </div>
 
 <!--<div class="mid-top">-->
@@ -51,8 +62,21 @@
     <h1>Our Services</h1>
   </div>
   <hr style="width:40%">
-  <h2 style="width: 75%">GYD(Graph Your Data) is a tool that can be used to summarize your text using our text box or uploading a file. Furthermore, you can also create a knowledge
-    graph using your text or files.</h2>
+  <div class = "text">
+    <mat-form-field class="text-field" style="width: 40%">
+      <ngx-typed-js [strings]="['GYD(Graph Your Data) is a tool that can be used to summarize your text using our text box or uploading a file. It can save your input and outputs so that you can go back to previous versions or generate new ones to your liking.Furthermore, you can also create a knowledge\n'+
+'    graph using your text or files.']" [typeSpeed]="40" [backSpeed]="18" [loop]="true" [smartBackspace]="true" [shuffle]="true" [backDelay]="3000">
+         <h4 class="autotype">Text: <span class="typing"></span></h4>
+      </ngx-typed-js>
+      <textarea  matInput name="input" rows="18" cols = "15"></textarea>
+    </mat-form-field>
+    <mat-form-field class="text-field-output"  style="width: 40%">
+      <ngx-typed-js [strings]="['GYD is a tool that allows you to summarize text using a text box or by uploading a file. You can also generate knowledge graphs and it saves your input and outputs. ']" [typeSpeed]="80" [backSpeed]="40" [loop]="true" [smartBackspace]="true" [shuffle]="true" [backDelay]="3000">
+        <h4 class="autotype"> Summarized Text:  <span class="typing"></span></h4>
+      </ngx-typed-js>
+      <textarea matInput  name="output" rows="18" cols = "15"></textarea>
+    </mat-form-field>
+  </div>
 
   <h1>About us</h1>
   <hr style="width:40%">

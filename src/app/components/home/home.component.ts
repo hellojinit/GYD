@@ -18,6 +18,16 @@ export class HomeComponent implements OnInit {
     particlesJS.load('particles-js', 'assets/particles.json', function () {
       console.log('callback - particles.js config loaded');
     });
+    window.addEventListener("scroll", function() {
+      const scrollDownArrow = document.getElementById("scroll-down-arrow");
+      if (scrollDownArrow && window.scrollY > 0) {
+        scrollDownArrow.style.display = "none";
+      } else {
+        // @ts-ignore
+        scrollDownArrow.style.display = "block";
+      }
+    });
+
   }
 }
 

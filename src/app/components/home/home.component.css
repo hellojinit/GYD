@@ -32,7 +32,7 @@ h2 {
 .button-top {
   position: absolute;
   z-index: 20;
-  top: 70%;
+  top: 60%;
   left: 50%;
   -ms-transform: translateX(-50%) translateY(-70%);
   -webkit-transform: translate(-50%,-70%);
@@ -144,4 +144,72 @@ h4 {
 #particles-js {
   background: rgba(0, 0, 0, 0)
 }
+
+
+#scroll-down-arrow {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 500;
+  color: white;
+}
+
+#scroll-down-arrow a {
+  z-index: 500;
+  display: block;
+  width: 50px;
+  height: 50px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  animation: arrow-bounce 2s infinite;
+}
+
+#scroll-down-arrow a i {
+  position: relative;
+  top: 3px;
+}
+
+@keyframes arrow-bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.autotype {
+  color: black
+}
+
+.text-field {
+  z-index: 9999;
+  color: black;
+  margin-right: 1%;
+}
+
+.text-field-output {
+  z-index: 9999;
+  color: black
+}
+
+.text {
+  margin: 2em auto;
+  text-align: center;
+  position: relative; /* make sure the element is positioned relative to its normal position */
+  z-index: 9999; /* set the z-index to a value higher than other elements on the page */
+  width: 85%; /* set the width to 100% to make the element expand to the full width of its parent container */
+  max-width: 4000px; /* set a maximum width so the element doesn't get too wide */
+  height: 5%;
+  max-height: 3000px;
+}
+
 

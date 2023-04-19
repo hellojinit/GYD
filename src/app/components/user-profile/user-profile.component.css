@@ -13,3 +13,10 @@ mat-card {
   5px 5px 10px 5px rebeccapurple,
   5px 5px 10px 5px rebeccapurple;
 }
+
+.buttons {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}

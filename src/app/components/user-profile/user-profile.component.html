@@ -28,6 +28,14 @@
                 <p>Email: <b>{{user.email}}</b></p>
                 <p>Email Verified: <b>{{user.emailVerified}}</b></p>
               </div>
+
     </form>
+
   </mat-card-content>
 </mat-card>
+
+<div class = "buttons">
+  <button mat-raised-button color="primary">Privacy Policy</button>
+  <button mat-raised-button color="warn" (click)="authService.SignOut()">Log Out</button>
+  <button mat-raised-button color="warn" (click)="deleteUserHistory()">Delete History</button>
+</div>
