@@ -29,6 +29,7 @@ form {
 
 .text {
   padding-right: 0%;
+  color: white;
 }
 
 .text-field {
@@ -37,4 +38,40 @@ form {
 
 .form-control {
   margin-top: 2%;
+}
+
+.uploadbut {
+  margin: 2%;
+}
+
+h2 {
+  color: white;
+}
+
+.example-card {
+  color: #ECEFF1;
+  background: #4c0170;
+  /*padding: 3%;*/
+  margin: 3%;
+  width: 93%;
+  border-radius: 20px;
+}
+
+.aaa {
+  /*display: flex;*/
+  /*flex-direction: column;*/
+  /*align-items: center;*/
+  /*padding-left: 5%;*/
+  /*max-width: 100%;*/
+  /*margin: 2em auto;*/
+  /*text-align: center;*/
+}
+
+
+/*.typing {*/
+/*  color: white;*/
+/*}*/
+
+.autotype {
+  color: white
 }
