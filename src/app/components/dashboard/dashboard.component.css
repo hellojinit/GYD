@@ -75,3 +75,9 @@ h2 {
 .autotype {
   color: white
 }
+
+
+
+.card-helper {
+  justify-content: flex-end;
+}

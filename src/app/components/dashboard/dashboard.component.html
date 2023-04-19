@@ -66,16 +66,16 @@
       <mat-card-content>
         <p><strong>Input:</strong> {{ item.input }}</p>
         <p><strong>Output:</strong> {{ item.output }}</p>
-        <p>{{ item.dateTime.toDate() | date:'medium' }}</p>
+        <p class = "dateCard">  {{ item.dateTime.toDate() | date:'medium' }}</p>
         <div class="card-helper"  fxLayout="row" fxLayoutGap="16px">
-          <button mat-raised-button color="warn" (click)="deleteUserInputOutput(item.id)">
-            Delete
-          </button>
           <button mat-raised-button color="primary" (click)="copyOutput(item.output)">
             Copy Output
           </button>
           <button mat-raised-button color="primary" (click)="summarizeAgain(item.input)">
             Summarize Again
+          </button>
+          <button mat-raised-button color="warn" (click)="deleteUserInputOutput(item.id)">
+            Delete
           </button>
         </div>
 
