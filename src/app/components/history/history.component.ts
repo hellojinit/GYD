@@ -19,20 +19,40 @@ export class HistoryComponent {
     private http: HttpClient,
     private firestore: AngularFirestore
   ) {
-    this.userInputsOutputsCollection = this.firestore.collection('users').doc(this.authService.userData.uid).collection('History'); // Reference to "userInputsOutputs" collection in Firestore
-    this.userInputsOutputs = this.userInputsOutputsCollection.snapshotChanges().pipe(
-      map(actions => {
-        // Map the snapshot changes to an array of user inputs and outputs data
-        return actions.map(a => {
-          const data = a.payload.doc.data();
-          const id = a.payload.doc.id;
-          return { id, ...data };
-        }).sort((a, b) => {
-          // Sort the data array by date and time in descending order
-          return b.dateTime.toDate().getTime() - a.dateTime.toDate().getTime();
-        });
-      })
-    );
+    if (this.authService.userData.uid != null) {
+      this.userInputsOutputsCollection = this.firestore.collection('users').doc(this.authService.userData.uid).collection('History');
+      // Reference to "userInputsOutputs" collection in Firestore
+      this.userInputsOutputs = this.userInputsOutputsCollection.snapshotChanges().pipe(
+        map(actions => {
+          // Map the snapshot changes to an array of user inputs and outputs data
+          return actions.map(a => {
+            const data = a.payload.doc.data();
+            const id = a.payload.doc.id;
+            return { id, ...data };
+          }).sort((a, b) => {
+            // Sort the data array by date and time in descending order
+            return b.dateTime.toDate().getTime() - a.dateTime.toDate().getTime();
+          });
+        })
+      );
+    } else {
+      this.userInputsOutputsCollection = this.firestore.collection('users').doc('56pBT5yueRdWeRUJaRjzXuPk1io2').collection('History');
+      // Reference to "userInputsOutputs" collection in Firestore
+      this.userInputsOutputs = this.userInputsOutputsCollection.snapshotChanges().pipe(
+        map(actions => {
+          // Map the snapshot changes to an array of user inputs and outputs data
+          return actions.map(a => {
+            const data = a.payload.doc.data();
+            const id = a.payload.doc.id;
+            return { id, ...data };
+          }).sort((a, b) => {
+            // Sort the data array by date and time in descending order
+            return b.dateTime.toDate().getTime() - a.dateTime.toDate().getTime();
+          });
+        })
+      );
+    }
+
 
   }
 

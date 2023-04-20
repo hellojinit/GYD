@@ -23,8 +23,10 @@ export class HomeComponent implements OnInit {
       if (scrollDownArrow && window.scrollY > 0) {
         scrollDownArrow.style.display = "none";
       } else {
-        // @ts-ignore
-        scrollDownArrow.style.display = "block";
+        if (scrollDownArrow != null) {
+          scrollDownArrow.style.display = "block";
+
+        }
       }
     });
 

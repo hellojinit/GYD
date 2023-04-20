@@ -46,6 +46,9 @@ import {
   CarouselInnerComponent,
   CarouselItemComponent, ColComponent, RowComponent
 } from "@coreui/angular";
+
+import { FaqComponent } from './components/faq/faq.component';
+
 // import {LottieModule} from 'ngx-lottie';
 
 // export function playerFactory(): any {
@@ -65,7 +68,8 @@ import {
     HomeComponent,
     RealDashboardComponent,
     HistoryComponent,
-    QaComponent
+    QaComponent,
+    FaqComponent
   ],
   imports: [
     BrowserModule,

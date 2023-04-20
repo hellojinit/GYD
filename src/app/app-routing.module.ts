@@ -9,6 +9,7 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 
 import { HistoryComponent } from './components/history/history.component';
 import { QaComponent } from './components/qa/qa.component';
+import { FaqComponent } from './components/faq/faq.component';
 import { RealDashboardComponent } from './components/real-dashboard/real-dashboard.component';
 import { KnowledgeGraphComponent } from './components/knowledge-graph/knowledge-graph.component';
 import { HomeComponent } from './components/home/home.component';
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'dashboard', component: RealDashboardComponent },
   { path: 'history', component: HistoryComponent },
   { path: 'qa', component: QaComponent },
+  { path: 'faq', component: FaqComponent },
   { path: 'verify-email-address', component: VerifyEmailComponent },
   { path: 'profile', component: UserProfileComponent, canActivate: [AuthGuard] },
 ];
