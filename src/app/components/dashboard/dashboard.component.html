@@ -1,17 +1,84 @@
-<!-- Top navigation -->
-<mat-toolbar color="primary">
-  <button mat-button class="example-icon"  routerLink="/home">
-    <mat-icon>share</mat-icon> GYD
-  </button>
-<!--  <span><span class="redirect" routerLink="/home">GYD</span></span>-->
-  <span class="example-spacer">
-  </span>
-  <!--  <span>Log out</span>-->
-  <button mat-button color="white" (click)="authService.SignOut()">Log Out</button>
-  <button mat-button class="example-icon"  routerLink="/profile">
-    <mat-icon>person</mat-icon>
-  </button>
-</mat-toolbar>
+
+<nav class="main-menu">
+
+
+  <ul>
+    <li>
+      <a href="#">
+        <mat-icon [ngStyle]="{'color':'White'}">share</mat-icon>
+        <span class="nav-text">GYD</span>
+      </a>
+    </li>
+    <hr class="sidebar-divider">
+    <li class="has-subnav">
+      <a href="#">
+        <mat-icon [ngStyle]="{'color':'RebeccaPurple'}">home</mat-icon>
+        <span class="nav-text">
+                          Dashboard
+                        </span>
+      </a>
+
+    </li>
+
+    <li class="has-subnav">
+      <a href="#">
+        <mat-icon [ngStyle]="{'color':'RoyalBlue'}">notes</mat-icon>
+        <span class="nav-text">
+                          Text Summarization
+                        </span>
+      </a>
+
+    </li>
+    <li class="has-subnav">
+      <a href="#">
+        <mat-icon [ngStyle]="{'color':'purple'}">graphic_eq</mat-icon>
+        <span class="nav-text">
+                         Knowledge Graph
+                        </span>
+      </a>
+
+    </li>
+    <li class="has-subnav">
+      <a href="#">
+        <mat-icon [ngStyle]="{'color':'CadetBlue'}">question_answer</mat-icon>
+        <span class="nav-text">
+                         Q/A
+                        </span>
+      </a>
+
+    </li>
+    <li>
+      <a href="#">
+        <!--        <i class="fa fa-film fa-2x"></i>-->
+        <mat-icon  [ngStyle]="{'color':'ForestGreen'}">history</mat-icon>
+        <span class="nav-text">
+                        User History
+                        </span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <!--        <i class="fa fa-book fa-2x"></i>-->
+        <mat-icon [ngStyle]="{'color':'sandybrown'}" >person_pin</mat-icon>
+        <span class="nav-text">
+
+                        Profile
+                        </span>
+      </a>
+    </li>
+  </ul>
+
+  <ul class="logout">
+    <li>
+      <a href="#">
+        <mat-icon [ngStyle]="{'color':'tomato'}">power_settings_new</mat-icon>
+        <span class="nav-text">
+                            Logout
+                        </span>
+      </a>
+    </li>
+  </ul>
+</nav>
 
 <form class="example-form">
   <ngx-typed-js [strings]="['Summarize', 'learn faster', 'learn efficiently', 'Visualize text', 'Upload text']" [typeSpeed]="90" [backSpeed]="40" [loop]="true" [smartBackspace]="true" [shuffle]="true" [backDelay]="5000">
@@ -20,11 +87,11 @@
   <div class = "text">
     <mat-form-field class="text-field" style="width: 40%">
       <mat-label>Text for summarization</mat-label>
-      <textarea  matInput [(ngModel)]="textInput" name="input" rows="18" cols = "15"></textarea>
+      <textarea  matInput [(ngModel)]="textInput" name="input" rows="20" cols = "30"></textarea>
     </mat-form-field>
     <mat-form-field class="text-field-output"  style="width: 40%">
       <mat-label>Output for your text</mat-label>
-      <textarea matInput [(ngModel)]="textOutput" name="output" rows="18" cols = "15">{{textOutput}}</textarea>
+      <textarea matInput [(ngModel)]="textOutput" name="output" rows="20" cols = "30">{{textOutput}}</textarea>
     </mat-form-field>
   </div>
   <div class="actionbuttons">
