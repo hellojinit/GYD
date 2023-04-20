@@ -20,7 +20,7 @@
         </mat-form-field>
         <div class="actionbuttons">
           <div class="flex-parent jc-center">
-            <button type="submit" mat-raised-button color="primary" (click)="authService.SignUp(userName.value, userPassword.value)" routerLink="/home">
+            <button type="submit" mat-raised-button color="primary" (click)="authService.SignUp(userName.value, userPassword.value)">
               Sign Up
             </button>
           </div>
@@ -28,7 +28,7 @@
             <label id="dialog-user-name">Or</label>
           </div>
           <div class="flex-parent jc-center">
-            <button type="button" mat-raised-button color="warn" (click)="authService.GoogleAuth()" routerLink="/home">
+            <button type="button" mat-raised-button color="warn" (click)="authService.GoogleAuth()">
               <i class="fab fa-google-plus-g"></i>
               Sign Up With Google
             </button>

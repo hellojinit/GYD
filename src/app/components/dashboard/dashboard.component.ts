@@ -21,6 +21,8 @@ export class DashboardComponent implements OnInit{
   // @ts-ignore
   textOutput: string;
   loading: boolean = false;
+
+  sumButton = "Summarize!"
   fileSelected = false;
 
   userInputsOutputsCollection: AngularFirestoreCollection<any>; // Firestore collection reference
@@ -76,6 +78,7 @@ export class DashboardComponent implements OnInit{
   }
 
   onSubmit() {
+    this.sumButton = "Summarize Again!";
     const url = `api/summarize/${this.textInput}`;
     console.log('Submitted')
     this.textOutput = 'Summarizing..'

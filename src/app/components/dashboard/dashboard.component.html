@@ -57,7 +57,7 @@
       </a>
     </li>
     <li>
-      <a routerLink="/history">
+      <a routerLink="/faq">
         <!--        <i class="fa fa-film fa-2x"></i>-->
         <mat-icon  [ngStyle]="{'color':'burlywood'}">info</mat-icon>
         <span class="nav-text">
@@ -113,15 +113,15 @@
       </button>
     </div>
     <div class="obuttons">
-    <button mat-raised-button color="primary" (click)="onSubmit()">
+      <button mat-raised-button color="primary" (click)="onSubmit()">
       Summarize!
-    </button>
-    <button mat-raised-button color="primary" routerLink="/knowledge-graph">
-      Knowledge Graph!
-    </button>
-    <button mat-raised-button color="warn" routerLink="/knowledge-graph">
-      Both!
-    </button>
+      </button>
+      <button mat-raised-button color="primary" routerLink="/knowledge-graph">
+        Knowledge Graph!
+      </button>
+      <button mat-raised-button color="warn" routerLink="/knowledge-graph">
+        Both!
+      </button>
     </div>
   </div>
   <div class="container" *ngIf="loading">

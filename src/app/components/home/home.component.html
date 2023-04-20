@@ -50,6 +50,30 @@
   <script src="helper/particles/particles.js"></script>
 </div>
 
+<div class = "dashPreview">
+  <img src="../../../assets/Dashboard.png">
+</div>
+
+<div class = "text">
+  <mat-form-field class="text-field" style="width: 40%">
+    <ngx-typed-js [strings]="['GYD(Graph Your Data) is a tool that can be used to summarize your text using our text box or uploading a file. It can save your input and outputs so that you can go back to previous versions or generate new ones to your liking.Furthermore, you can also create a knowledge\n'+
+'    graph using your text or files.']" [typeSpeed]="35"  [loop]="true"  [backDelay]="3000" [fadeOut] = "true">
+      <h4 class="autotype">Text: <span class="typing"></span></h4>
+    </ngx-typed-js>
+    <div style="height: 100%; overflow: hidden;">
+      <textarea class="box" matInput name="input"></textarea>
+    </div>
+  </mat-form-field>
+  <mat-form-field class="text-field-output"  style="width: 40%">
+    <ngx-typed-js [strings]="['GYD is a tool that allows you to summarize text using a text box or by uploading a file. You can also generate knowledge graphs and it saves your input and outputs. ']" [typeSpeed]="72.5" [loop]="true" [backDelay]="3000" [fadeOut] = "true">
+      <h4 class="autotype"> Summarized Text:  <span class="typing"></span></h4>
+    </ngx-typed-js>
+    <div style="height: 100%; overflow: hidden;">
+      <textarea matInput class = "box" name="output" ></textarea>
+    </div>
+  </mat-form-field>
+</div>
+
 <div class="bottom">
   <div class="frontcover">
     <h1>GYD</h1>
@@ -62,7 +86,6 @@
 
 
   <h1>About us</h1>
-  <hr style="width:40%">
   <h2 style="width: 75%">
     We are a group of passionate students from Virginia, US and Egypt who worked together on a project to solve a real-world problem.
     Our team consisted of five members who brought a diverse range of skills and experiences to the table. We met through a Software Engineering Course that
@@ -70,7 +93,6 @@
     with GYD or your own guide to graphing your data. We hope to continue expanding our services and working together to improve communities world wide.</h2>
   <h1>Creators</h1>
 
-  <hr style="width:40%">
 
   <img class = "image" src="../../../assets/IMG_7024.jpg" >
   <div class="creators">

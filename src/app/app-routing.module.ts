@@ -16,19 +16,21 @@ import { HomeComponent } from './components/home/home.component';
 // route guard
 import { AuthGuard } from './shared/guard/auth.guard';
 const routes: Routes = [
-  { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'sign-in', component: SignInComponent },
   { path: 'register-user', component: SignUpComponent },
-  { path: 'text-summarization', component: DashboardComponent},
+  { path: 'text-summarization', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'forgot-password', component: ForgotPasswordComponent },
-  { path: 'knowledge-graph', component: KnowledgeGraphComponent },
-  { path: 'dashboard', component: RealDashboardComponent },
-  { path: 'history', component: HistoryComponent },
-  { path: 'qa', component: QaComponent },
-  { path: 'faq', component: FaqComponent },
+  { path: 'knowledge-graph', component: KnowledgeGraphComponent, canActivate: [AuthGuard] },
+  { path: 'dashboard', component: RealDashboardComponent, canActivate: [AuthGuard]  },
+  { path: 'history', component: HistoryComponent, canActivate: [AuthGuard]  },
+  { path: 'qa', component: QaComponent, canActivate: [AuthGuard]  },
+  { path: 'faq', component: FaqComponent, canActivate: [AuthGuard]  },
   { path: 'verify-email-address', component: VerifyEmailComponent },
   { path: 'profile', component: UserProfileComponent, canActivate: [AuthGuard] },
+  // otherwise redirect to home
+  { path: '**', redirectTo: '/home' }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
