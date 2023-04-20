@@ -59,28 +59,28 @@
 <!--  </div>-->
 </form>
 
-<h2>History</h2>
-<div class="aaa">
-  <div *ngFor="let item of userInputsOutputs | async">
-    <mat-card class="example-card">
-      <mat-card-content>
-        <p><strong>Input:</strong> {{ item.input }}</p>
-        <p><strong>Output:</strong> {{ item.output }}</p>
-        <p class = "dateCard">  {{ item.dateTime.toDate() | date:'medium' }}</p>
-        <div class="card-helper"  fxLayout="row" fxLayoutGap="16px">
-          <button mat-raised-button color="primary" (click)="copyOutput(item.output)">
-            Copy Output
-          </button>
-          <button mat-raised-button color="primary" (click)="summarizeAgain(item.input)">
-            Summarize Again
-          </button>
-          <button mat-raised-button color="warn" (click)="deleteUserInputOutput(item.id)">
-            Delete
-          </button>
-        </div>
+<!--<h2>History</h2>-->
+<!--<div class="aaa">-->
+<!--  <div *ngFor="let item of userInputsOutputs | async">-->
+<!--    <mat-card class="example-card">-->
+<!--      <mat-card-content>-->
+<!--        <p><strong>Input:</strong> {{ item.input }}</p>-->
+<!--        <p><strong>Output:</strong> {{ item.output }}</p>-->
+<!--        <p class = "dateCard">  {{ item.dateTime.toDate() | date:'medium' }}</p>-->
+<!--        <div class="card-helper"  fxLayout="row" fxLayoutGap="16px">-->
+<!--          <button mat-raised-button color="primary" (click)="copyOutput(item.output)">-->
+<!--            Copy Output-->
+<!--          </button>-->
+<!--          <button mat-raised-button color="primary" (click)="summarizeAgain(item.input)">-->
+<!--            Summarize Again-->
+<!--          </button>-->
+<!--          <button mat-raised-button color="warn" (click)="deleteUserInputOutput(item.id)">-->
+<!--            Delete-->
+<!--          </button>-->
+<!--        </div>-->
 
-      </mat-card-content>
-    </mat-card>
-  </div>
+<!--      </mat-card-content>-->
+<!--    </mat-card>-->
+<!--  </div>-->
 
-</div>
+<!--</div>-->

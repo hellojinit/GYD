@@ -30,6 +30,11 @@ import {MatIconModule} from "@angular/material/icon";
 import {FormsModule} from "@angular/forms";
 import {KnowledgeGraphComponent} from './components/knowledge-graph/knowledge-graph.component';
 import {HomeComponent} from './components/home/home.component';
+import {MatSidenavModule} from "@angular/material/sidenav";
+import {MatListModule} from "@angular/material/list";
+import { RealDashboardComponent } from './components/real-dashboard/real-dashboard.component';
+import { HistoryComponent } from './components/history/history.component';
+import { QaComponent } from './components/qa/qa.component';
 // import {LottieModule} from 'ngx-lottie';
 
 // export function playerFactory(): any {
@@ -46,7 +51,10 @@ import {HomeComponent} from './components/home/home.component';
     VerifyEmailComponent,
     UserProfileComponent,
     KnowledgeGraphComponent,
-    HomeComponent
+    HomeComponent,
+    RealDashboardComponent,
+    HistoryComponent,
+    QaComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +73,9 @@ import {HomeComponent} from './components/home/home.component';
     MatIconModule,
     FormsModule,
     FlexLayoutModule,
-    NgxTypedJsModule
+    NgxTypedJsModule,
+    MatSidenavModule,
+    MatListModule,
     // LottieModule.forRoot({player: playerFactory}),
   ],
   providers: [AuthService],

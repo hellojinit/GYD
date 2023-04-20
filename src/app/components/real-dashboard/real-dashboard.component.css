@@ -150,3 +150,88 @@ nav ul,nav li {
   font-weight: 300;
   src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff');
 }
+
+
+
+
+
+
+form {
+  max-width: 100%;
+  margin: 2em auto;
+  text-align: center;
+}
+
+.ubutton {
+  margin-left: -77%;
+}
+.obuttons {
+  margin-top: -2%;
+  margin-left: 58%;
+}
+.actionbuttons button{
+  margin-right: 1%;
+}
+
+.actionbuttons {
+  padding-left: 1.7%;
+}
+
+.text textarea{
+  margin-right: 3%;
+}
+
+.text {
+  padding-right: 0%;
+  color: white;
+}
+
+.text-field {
+  margin-right: 1%;
+}
+
+.form-control {
+  margin-top: 2%;
+}
+
+.uploadbut {
+  margin: 2%;
+}
+
+h2 {
+  color: white;
+}
+
+.example-card {
+  color: #ECEFF1;
+  background: #4c0170;
+  /*padding: 3%;*/
+  margin: 3%;
+  width: 93%;
+  border-radius: 20px;
+}
+
+.aaa {
+  /*display: flex;*/
+  /*flex-direction: column;*/
+  /*align-items: center;*/
+  /*padding-left: 5%;*/
+  /*max-width: 100%;*/
+  /*margin: 2em auto;*/
+  /*text-align: center;*/
+}
+
+
+/*.typing {*/
+/*  color: white;*/
+/*}*/
+
+.autotype {
+  color: white
+}
+
+
+
+/*.card-helper {*/
+/*  justify-content: flex-end;*/
+/*}*/
