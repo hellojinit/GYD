@@ -235,3 +235,86 @@ h2 {
 /*.card-helper {*/
 /*  justify-content: flex-end;*/
 /*}*/
+
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+}
+
+.dashboard-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.block-title {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  font-size: 6rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  background: linear-gradient(90deg, #3522fa, #6251f8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h2 {
+  font-size: 3rem;
+  padding-top: 10px;
+  padding-bottom: 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  transform: skewX(-10deg);
+  background: linear-gradient(90deg, #3522fa, #6251f8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+.dashboard-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  width: 300px;
+  margin: 10px;
+}
+
+.card-avatar {
+  background-color: #ccc;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.card-subtitle {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.carousel {
+  text-color: white;
+}
+
+
+.whole-page{
+  padding-left: 60px;
+}
+
+
+/* first card */
+c-card {
+  background-color: rebeccapurple;
+}
+
+/* second card */
+c-card:nth-of-type(2) {
+  background-color: royalblue;
+}

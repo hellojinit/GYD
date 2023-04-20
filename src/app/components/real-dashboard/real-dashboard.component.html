@@ -80,3 +80,66 @@
   </ul>
 </nav>
 
+
+
+<div class = "whole-page">
+  <div class="dashboard-container">
+    <div class="dashboard-title">
+      <h1 class="block-title">USE GYD TO</h1>
+      <ngx-typed-js [strings]="['Summarize text', 'Graph Your Data', 'Ask Questions about your Text']" [typeSpeed]="90" [backSpeed]="40" [loop]="true" [smartBackspace]="true" [shuffle]="true" [backDelay]="5000">
+        <h2><span class="typing"></span></h2>
+      </ngx-typed-js>
+    </div>
+
+  <!--<div class = "carousel">-->
+  <!--  <c-carousel [dark]="true" [wrap]="false">-->
+  <!--    <c-carousel-indicators></c-carousel-indicators>-->
+  <!--    <c-carousel-inner>-->
+  <!--      <c-carousel-item *ngFor="let slide of slides; index as i;">-->
+  <!--        <img-->
+  <!--          [src]="slide.src"-->
+  <!--          alt="{{slide.title}}"-->
+  <!--          class="d-block w-100"-->
+  <!--          loading="lazy"-->
+  <!--        />-->
+  <!--        <c-carousel-caption class="d-none d-md-block">-->
+  <!--          <h3>{{slide.title}}</h3>-->
+  <!--          <p>{{slide.subtitle}}</p>-->
+  <!--        </c-carousel-caption>-->
+  <!--      </c-carousel-item>-->
+  <!--    </c-carousel-inner>-->
+  <!--    <c-carousel-control [routerLink] caption="Previous" direction="prev"></c-carousel-control>-->
+  <!--    <c-carousel-control [routerLink] caption="Next" direction="next"></c-carousel-control>-->
+  <!--  </c-carousel>-->
+  <!--</div>-->
+
+    <div style="display: flex; justify-content: center; gap: 20px;">
+  <!--  <c-row>-->
+  <!--    <c-col >-->
+      <c-card style="background-color: rebeccapurple; width: 35%;">
+        <img cCardImg="top" src="./assets/text-sum.png">
+        <c-card-body>
+          <h5 cCardTitle>Text Summarization</h5>
+          <p cCardText>
+            Upload, write, or paste any text and GYD will summarize it in moments.
+          </p>
+          <button cButton color="light" routerLink="/text-summarization">Summarize</button>
+        </c-card-body>
+      </c-card>
+  <!--   </c-col>-->
+  <!--  <c-col>-->
+      <c-card style="background-color: royalblue; width: 35%;">
+        <img cCardImg="top" src="./assets/KG.png">
+        <c-card-body>
+          <h5 cCardTitle>Knowledge Graph</h5>
+          <p cCardText>
+            Upload, write, or paste any text and GYD will give you a knowledge graph.
+          </p>
+          <button cButton color="light" routerLink="/knowledge-graph">Graph</button>
+        </c-card-body>
+      </c-card>
+  <!--    </c-col>-->
+  <!--  </c-row>-->
+    </div>
+    </div>
+</div>

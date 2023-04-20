@@ -4,14 +4,14 @@
 
   <ul>
     <li>
-      <a href="#">
+      <a routerLink="/home">
         <mat-icon [ngStyle]="{'color':'White'}">share</mat-icon>
         <span class="nav-text">GYD</span>
       </a>
     </li>
     <hr class="sidebar-divider">
     <li class="has-subnav">
-      <a href="#">
+      <a routerLink="/dashboard">
         <mat-icon [ngStyle]="{'color':'RebeccaPurple'}">home</mat-icon>
         <span class="nav-text">
                           Dashboard
@@ -21,7 +21,7 @@
     </li>
 
     <li class="has-subnav">
-      <a href="#">
+      <a routerLink="/text-summarization">
         <mat-icon [ngStyle]="{'color':'RoyalBlue'}">notes</mat-icon>
         <span class="nav-text">
                           Text Summarization
@@ -30,7 +30,7 @@
 
     </li>
     <li class="has-subnav">
-      <a href="#">
+      <a routerLink="/knowledge-graph">
         <mat-icon [ngStyle]="{'color':'purple'}">graphic_eq</mat-icon>
         <span class="nav-text">
                          Knowledge Graph
@@ -39,7 +39,7 @@
 
     </li>
     <li class="has-subnav">
-      <a href="#">
+      <a routerLink="/qa">
         <mat-icon [ngStyle]="{'color':'CadetBlue'}">question_answer</mat-icon>
         <span class="nav-text">
                          Q/A
@@ -48,7 +48,7 @@
 
     </li>
     <li>
-      <a href="#">
+      <a routerLink="/history">
         <!--        <i class="fa fa-film fa-2x"></i>-->
         <mat-icon  [ngStyle]="{'color':'ForestGreen'}">history</mat-icon>
         <span class="nav-text">
@@ -57,11 +57,11 @@
       </a>
     </li>
     <li>
-      <a href="#">
+      <a routerLink="/profile">
         <!--        <i class="fa fa-book fa-2x"></i>-->
+
         <mat-icon [ngStyle]="{'color':'sandybrown'}" >person_pin</mat-icon>
         <span class="nav-text">
-
                         Profile
                         </span>
       </a>
@@ -70,7 +70,7 @@
 
   <ul class="logout">
     <li>
-      <a href="#">
+      <a (click)="authService.SignOut()">
         <mat-icon [ngStyle]="{'color':'tomato'}">power_settings_new</mat-icon>
         <span class="nav-text">
                             Logout
@@ -79,6 +79,8 @@
     </li>
   </ul>
 </nav>
+
+
 
 <form class="example-form">
   <ngx-typed-js [strings]="['Summarize', 'learn faster', 'learn efficiently', 'Visualize text', 'Upload text']" [typeSpeed]="90" [backSpeed]="40" [loop]="true" [smartBackspace]="true" [shuffle]="true" [backDelay]="5000">
@@ -126,28 +128,4 @@
 <!--  </div>-->
 </form>
 
-<!--<h2>History</h2>-->
-<!--<div class="aaa">-->
-<!--  <div *ngFor="let item of userInputsOutputs | async">-->
-<!--    <mat-card class="example-card">-->
-<!--      <mat-card-content>-->
-<!--        <p><strong>Input:</strong> {{ item.input }}</p>-->
-<!--        <p><strong>Output:</strong> {{ item.output }}</p>-->
-<!--        <p class = "dateCard">  {{ item.dateTime.toDate() | date:'medium' }}</p>-->
-<!--        <div class="card-helper"  fxLayout="row" fxLayoutGap="16px">-->
-<!--          <button mat-raised-button color="primary" (click)="copyOutput(item.output)">-->
-<!--            Copy Output-->
-<!--          </button>-->
-<!--          <button mat-raised-button color="primary" (click)="summarizeAgain(item.input)">-->
-<!--            Summarize Again-->
-<!--          </button>-->
-<!--          <button mat-raised-button color="warn" (click)="deleteUserInputOutput(item.id)">-->
-<!--            Delete-->
-<!--          </button>-->
-<!--        </div>-->
 
-<!--      </mat-card-content>-->
-<!--    </mat-card>-->
-<!--  </div>-->
-
-<!--</div>-->
