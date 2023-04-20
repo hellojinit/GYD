@@ -3,6 +3,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {NgxTypedJsModule} from 'ngx-typed-js';
 
+
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {HttpClientModule} from '@angular/common/http';
@@ -35,6 +36,16 @@ import {MatListModule} from "@angular/material/list";
 import { RealDashboardComponent } from './components/real-dashboard/real-dashboard.component';
 import { HistoryComponent } from './components/history/history.component';
 import { QaComponent } from './components/qa/qa.component';
+import {
+  ButtonDirective,
+  CardBodyComponent,
+  CardComponent, CardImgDirective, CardTextDirective, CardTitleDirective,
+  CarouselCaptionComponent,
+  CarouselComponent, CarouselControlComponent,
+  CarouselIndicatorsComponent,
+  CarouselInnerComponent,
+  CarouselItemComponent, ColComponent, RowComponent
+} from "@coreui/angular";
 // import {LottieModule} from 'ngx-lottie';
 
 // export function playerFactory(): any {
@@ -76,6 +87,20 @@ import { QaComponent } from './components/qa/qa.component';
     NgxTypedJsModule,
     MatSidenavModule,
     MatListModule,
+    CarouselComponent,
+    CarouselInnerComponent,
+    CarouselItemComponent,
+    CarouselIndicatorsComponent,
+    CarouselCaptionComponent,
+    CarouselControlComponent,
+    CardComponent,
+    CardBodyComponent,
+    CardImgDirective,
+    CardTitleDirective,
+    CardTextDirective,
+    ButtonDirective,
+    RowComponent,
+    ColComponent,
     // LottieModule.forRoot({player: playerFactory}),
   ],
   providers: [AuthService],

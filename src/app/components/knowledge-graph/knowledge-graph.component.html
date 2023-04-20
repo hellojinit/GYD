@@ -1,21 +1,21 @@
 
 <div class="area">
   <h1>Knowledge Graph</h1>
-
 </div>
+
 <nav class="main-menu">
 
 
   <ul>
     <li>
-      <a href="#">
+      <a routerLink="/home">
         <mat-icon [ngStyle]="{'color':'White'}">share</mat-icon>
         <span class="nav-text">GYD</span>
       </a>
     </li>
     <hr class="sidebar-divider">
     <li class="has-subnav">
-      <a href="#">
+      <a routerLink="/dashboard">
         <mat-icon [ngStyle]="{'color':'RebeccaPurple'}">home</mat-icon>
         <span class="nav-text">
                           Dashboard
@@ -25,7 +25,7 @@
     </li>
 
     <li class="has-subnav">
-      <a href="#">
+      <a routerLink="/text-summarization">
         <mat-icon [ngStyle]="{'color':'RoyalBlue'}">notes</mat-icon>
         <span class="nav-text">
                           Text Summarization
@@ -34,7 +34,7 @@
 
     </li>
     <li class="has-subnav">
-      <a href="#">
+      <a routerLink="/knowledge-graph">
         <mat-icon [ngStyle]="{'color':'purple'}">graphic_eq</mat-icon>
         <span class="nav-text">
                          Knowledge Graph
@@ -43,7 +43,7 @@
 
     </li>
     <li class="has-subnav">
-      <a href="#">
+      <a routerLink="/qa">
         <mat-icon [ngStyle]="{'color':'CadetBlue'}">question_answer</mat-icon>
         <span class="nav-text">
                          Q/A
@@ -52,8 +52,8 @@
 
     </li>
     <li>
-      <a href="#">
-<!--        <i class="fa fa-film fa-2x"></i>-->
+      <a routerLink="/history">
+        <!--        <i class="fa fa-film fa-2x"></i>-->
         <mat-icon  [ngStyle]="{'color':'ForestGreen'}">history</mat-icon>
         <span class="nav-text">
                         User History
@@ -61,11 +61,11 @@
       </a>
     </li>
     <li>
-      <a href="#">
-<!--        <i class="fa fa-book fa-2x"></i>-->
+      <a routerLink="/profile">
+        <!--        <i class="fa fa-book fa-2x"></i>-->
+
         <mat-icon [ngStyle]="{'color':'sandybrown'}" >person_pin</mat-icon>
         <span class="nav-text">
-
                         Profile
                         </span>
       </a>
@@ -74,7 +74,7 @@
 
   <ul class="logout">
     <li>
-      <a href="#">
+      <a (click)="authService.SignOut()">
         <mat-icon [ngStyle]="{'color':'tomato'}">power_settings_new</mat-icon>
         <span class="nav-text">
                             Logout

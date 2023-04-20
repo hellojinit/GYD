@@ -1,19 +1,101 @@
 <!-- Top navigation -->
-<div class="topmost">
-  <mat-toolbar color="primary">
-    <button mat-button class="example-icon"  routerLink="/home">
-      <mat-icon>share</mat-icon> GYD
-    </button>
-    <!--  <span><span class="redirect" routerLink="/home">GYD</span></span>-->
-    <span class="example-spacer">
-  </span>
-    <!--  <span>Log out</span>-->
-    <button mat-button color="warn" (click)="authService.SignOut()">Log Out</button>
-    <button mat-button class="example-icon"  routerLink="/profile">
-      <mat-icon>person</mat-icon>
-    </button>
-  </mat-toolbar>
-</div>
+<!--<div class="topmost">-->
+<!--  <mat-toolbar color="primary">-->
+<!--    <button mat-button class="example-icon"  routerLink="/home">-->
+<!--      <mat-icon>share</mat-icon> GYD-->
+<!--    </button>-->
+<!--    &lt;!&ndash;  <span><span class="redirect" routerLink="/home">GYD</span></span>&ndash;&gt;-->
+<!--    <span class="example-spacer">-->
+<!--  </span>-->
+<!--    &lt;!&ndash;  <span>Log out</span>&ndash;&gt;-->
+<!--    <button mat-button color="warn" (click)="authService.SignOut()">Log Out</button>-->
+<!--    <button mat-button class="example-icon"  routerLink="/profile">-->
+<!--      <mat-icon>person</mat-icon>-->
+<!--    </button>-->
+<!--  </mat-toolbar>-->
+<!--</div>-->
+
+<nav class="main-menu">
+
+
+  <ul>
+    <li>
+      <a routerLink="/home">
+        <mat-icon [ngStyle]="{'color':'White'}">share</mat-icon>
+        <span class="nav-text">GYD</span>
+      </a>
+    </li>
+    <hr class="sidebar-divider">
+    <li class="has-subnav">
+      <a routerLink="/dashboard">
+        <mat-icon [ngStyle]="{'color':'RebeccaPurple'}">home</mat-icon>
+        <span class="nav-text">
+                          Dashboard
+                        </span>
+      </a>
+
+    </li>
+
+    <li class="has-subnav">
+      <a routerLink="/text-summarization">
+        <mat-icon [ngStyle]="{'color':'RoyalBlue'}">notes</mat-icon>
+        <span class="nav-text">
+                          Text Summarization
+                        </span>
+      </a>
+
+    </li>
+    <li class="has-subnav">
+      <a routerLink="/knowledge-graph">
+        <mat-icon [ngStyle]="{'color':'purple'}">graphic_eq</mat-icon>
+        <span class="nav-text">
+                         Knowledge Graph
+                        </span>
+      </a>
+
+    </li>
+    <li class="has-subnav">
+      <a routerLink="/qa">
+        <mat-icon [ngStyle]="{'color':'CadetBlue'}">question_answer</mat-icon>
+        <span class="nav-text">
+                         Q/A
+                        </span>
+      </a>
+
+    </li>
+    <li>
+      <a routerLink="/history">
+        <!--        <i class="fa fa-film fa-2x"></i>-->
+        <mat-icon  [ngStyle]="{'color':'ForestGreen'}">history</mat-icon>
+        <span class="nav-text">
+                        User History
+                        </span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/profile">
+        <!--        <i class="fa fa-book fa-2x"></i>-->
+
+        <mat-icon [ngStyle]="{'color':'sandybrown'}" >person_pin</mat-icon>
+        <span class="nav-text">
+                        Profile
+                        </span>
+      </a>
+    </li>
+  </ul>
+
+  <ul class="logout">
+    <li>
+      <a (click)="authService.SignOut()">
+        <mat-icon [ngStyle]="{'color':'tomato'}">power_settings_new</mat-icon>
+        <span class="nav-text">
+                            Logout
+                        </span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
 
 <mat-card>
   <mat-card-content>

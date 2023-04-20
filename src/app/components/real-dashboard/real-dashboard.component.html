@@ -4,7 +4,7 @@
 
   <ul>
     <li>
-      <a href="#">
+      <a routerLink="/home">
         <mat-icon [ngStyle]="{'color':'White'}">share</mat-icon>
         <span class="nav-text">GYD</span>
       </a>
@@ -70,7 +70,7 @@
 
   <ul class="logout">
     <li>
-      <a href="#">
+      <a (click)="authService.SignOut()">
         <mat-icon [ngStyle]="{'color':'tomato'}">power_settings_new</mat-icon>
         <span class="nav-text">
                             Logout

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from "../../shared/services/auth.service";
 
 @Component({
   selector: 'app-qa',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./qa.component.css']
 })
 export class QaComponent {
+  constructor(
+    public authService: AuthService
+  ) { }
+
+  ngOnInit() { }
 
 }
