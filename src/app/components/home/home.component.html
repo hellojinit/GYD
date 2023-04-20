@@ -4,7 +4,6 @@
     <button mat-button class="example-icon"  routerLink="/home">
       <mat-icon>share</mat-icon> GYD
     </button>
-    <!--  <span><span class="redirect" routerLink="/home">GYD</span></span>-->
     <span class="example-spacer">
   </span>
     <!--  <span>Log out</span>-->
@@ -19,9 +18,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
 </head>
 
-<!-- scripts -->
-<!--<script ></script>-->
-<!--<a href="#section-1" id="down-arrow"><i class="fas fa-chevron-down"></i></a>-->
 
 <div class="button-top">
   <div class = "form1">
@@ -63,26 +59,7 @@
   <div class = "use">
     <h1>Our Services</h1>
   </div>
-  <hr style="width:40%">
-  <div class = "text">
-    <mat-form-field class="text-field" style="width: 40%">
-      <ngx-typed-js [strings]="['GYD(Graph Your Data) is a tool that can be used to summarize your text using our text box or uploading a file. It can save your input and outputs so that you can go back to previous versions or generate new ones to your liking.Furthermore, you can also create a knowledge\n'+
-'    graph using your text or files.']" [typeSpeed]="35"  [loop]="true"  [backDelay]="3000" [fadeOut] = "true">
-         <h4 class="autotype">Text: <span class="typing"></span></h4>
-      </ngx-typed-js>
-      <div style="height: 100%; overflow: hidden;">
-        <textarea class="box" matInput name="input"></textarea>
-      </div>
-    </mat-form-field>
-    <mat-form-field class="text-field-output"  style="width: 40%">
-      <ngx-typed-js [strings]="['GYD is a tool that allows you to summarize text using a text box or by uploading a file. You can also generate knowledge graphs and it saves your input and outputs. ']" [typeSpeed]="72.5" [loop]="true" [backDelay]="3000" [fadeOut] = "true">
-        <h4 class="autotype"> Summarized Text:  <span class="typing"></span></h4>
-      </ngx-typed-js>
-      <div style="height: 100%; overflow: hidden;">
-        <textarea matInput class = "box" name="output" ></textarea>
-      </div>
-    </mat-form-field>
-  </div>
+
 
   <h1>About us</h1>
   <hr style="width:40%">

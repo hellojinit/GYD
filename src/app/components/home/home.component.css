@@ -121,6 +121,7 @@ h4 {
 
 .use {
   padding-top: 35%;
+  padding-bottom: 60%
 }
 
 /*#topandbottom {*/
@@ -192,6 +193,7 @@ h4 {
 }
 
 .text {
+  top: 180%;
   margin: 2em auto;
   text-align: center;
   position: relative; /* make sure the element is positioned relative to its normal position */
@@ -208,4 +210,25 @@ h4 {
   max-height: 5%;
   box-sizing: border-box;
   border: none;
+}
+
+
+/*dashboard previw*/
+.dashPreview {
+  position: absolute;
+  z-index: 50;
+  left: 50%;
+  top: 150%;
+  border: 20px white;
+  transform: translate(-50%, -50%);
+}
+
+.dashPreview img {
+  width: 50vw; /* adjust the value to your desired size */
+  height: auto; /* set height to auto to maintain aspect ratio */
+  box-shadow: rgba(156, 49, 245, 0.83) 5px 5px,
+  rgb(119, 35, 189, 0.7) 10px 10px,
+  rgba(68,	23,	157, 0.8) 15px 15px,
+  rgba(45, 14, 118, 0.8) 20px 20px,
+  rgba(44, 7, 71, 1) 25px 25px;
 }
