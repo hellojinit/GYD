@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../../shared/services/auth.service";
+// import { IconSetService } from '@coreui/icons-angular';
+// import { cilUser } from '@coreui/icons';
 declare var particlesJS: any;
 
 @Component({
@@ -11,7 +13,9 @@ export class HomeComponent implements OnInit {
 
   constructor(
     public authService: AuthService
+    // public iconSet: IconSetService
   ) {
+    // iconSet.icons = { cilUser };
   }
 
   ngOnInit(): void {

@@ -1,16 +1,15 @@
 <!-- Top navigation -->
 <div class="topmost">
-  <mat-toolbar color="primary">
-    <button mat-button class="example-icon"  routerLink="/home">
-      <mat-icon>share</mat-icon> GYD
-    </button>
+  <mat-toolbar style="background-color: transparent">
     <span class="example-spacer">
   </span>
     <!--  <span>Log out</span>-->
-    <button mat-button color="white" (click)="authService.SignOut()">Log Out</button>
-    <button mat-button class="example-icon"  routerLink="/profile">
+    <!--button cButton color="light" variant="outline" (click)="authService.SignOut()">Log Out</button-->
+    <button cButton color="light" class="example-icon" shape="rounded-circle" style="margin-left: 10px" routerLink="/profile">
       <mat-icon>person</mat-icon>
+<!--      <svg cIcon name="cilUser" size="l" title="User"></svg>-->
     </button>
+
   </mat-toolbar>
 </div>
 <!--<body>-->
@@ -21,7 +20,7 @@
 
 <div class="button-top">
   <div class = "form1">
-    <button class="large-button" type="submit" mat-raised-button color="primary" routerLink="/dashboard">
+    <button class="large-button" type="submit" cButton color="light"routerLink="/dashboard">
       <div>
         Guide me
         <mat-icon>trending_up</mat-icon>

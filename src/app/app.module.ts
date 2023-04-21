@@ -49,6 +49,7 @@ import {
 
 import { FaqComponent } from './components/faq/faq.component';
 import {NgOptimizedImage} from "@angular/common";
+import {IconDirective} from "@coreui/icons-angular";
 
 // import {LottieModule} from 'ngx-lottie';
 
@@ -107,6 +108,7 @@ import {NgOptimizedImage} from "@angular/common";
         RowComponent,
         ColComponent,
         NgOptimizedImage,
+        IconDirective,
         // LottieModule.forRoot({player: playerFactory}),
     ],
   providers: [AuthService],
