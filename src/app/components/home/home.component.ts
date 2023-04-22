@@ -1,7 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {AuthService} from "../../shared/services/auth.service";
-// import { IconSetService } from '@coreui/icons-angular';
-// import { cilUser } from '@coreui/icons';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../shared/services/auth.service';
 declare var particlesJS: any;
 
 @Component({
@@ -9,33 +7,33 @@ declare var particlesJS: any;
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit{
+
 
   constructor(
-    public authService: AuthService
+    public authService: AuthService,
     // public iconSet: IconSetService
-  ) {
-    // iconSet.icons = { cilUser };
-  }
+  ) {}
 
   ngOnInit(): void {
     particlesJS.load('particles-js', 'assets/particles.json', function () {
       console.log('callback - particles.js config loaded');
     });
-    window.addEventListener("scroll", function() {
-      const scrollDownArrow = document.getElementById("scroll-down-arrow");
+    window.addEventListener('scroll', function() {
+      const scrollDownArrow = document.getElementById('scroll-down-arrow');
       if (scrollDownArrow && window.scrollY > 0) {
-        scrollDownArrow.style.display = "none";
+        scrollDownArrow.style.display = 'none';
       } else {
         if (scrollDownArrow != null) {
-          scrollDownArrow.style.display = "block";
-
+          scrollDownArrow.style.display = 'block';
         }
       }
     });
-
   }
+
+
 }
+
 
 
 // // This is the option that uses the package's AnimationOption interface

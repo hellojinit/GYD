@@ -2,6 +2,26 @@
   flex: 1 1 auto;
 }
 
+.title {
+  padding-bottom: 4vw;
+  font-size: 130px;
+  font-family: Futura, sans-serif;
+  color: white;
+
+}
+.frontcover {
+  padding-right: 51vw;
+}
+
+.subtitle {
+  font-size: 40px;
+  padding-bottom: 2vw;
+  font-family: Futura, sans-serif;
+  font-weight: lighter;
+  width: 100%;
+
+
+}
 h1 {
   padding-top: 3%;
   padding-bottom: 2%;
@@ -30,8 +50,8 @@ h2 {
 .button-top {
   position: absolute;
   z-index: 20;
-  top: 55%;
-  left: 50%;
+  top: 35vw;
+  left: 20vw;
   -ms-transform: translateX(-50%) translateY(-70%);
   -webkit-transform: translate(-50%,-70%);
   transform: translate(-50%,-70%);
@@ -217,8 +237,8 @@ h4 {
 .dashPreview {
   position: absolute;
   z-index: 50;
-  left: 50%;
-  top: 150%;
+  left: 70vw;
+  top: 25vw;
   border: 20px white;
   transform: translate(-50%, -50%);
 }
@@ -232,3 +252,34 @@ h4 {
   rgba(45, 14, 118, 0.8) 20px 20px,
   rgba(44, 7, 71, 1) 25px 25px;
 }
+
+
+/*circles css*/
+
+.flex-container {
+  display: flex;
+  background-color: transparent;
+  justify-content: center;
+  height: 160px;
+}
+.flex-container > div{
+  background-color: #f1f1f1;
+  height: 200px;
+  width: 200px;
+  /*line-height: 50px;*/
+  text-align: center;
+  /*padding: 29px;*/
+  margin: 5vw;
+  /*padding-top: -50px;*/
+  /*padding-bottom: 7%;*/
+  /*margin-bottom: 30px;*/
+  border-radius: 50%;
+}
+/*.sometext {*/
+/*  display: flex;*/
+/*  justify-content: center;*/
+/*  margin-top: 35px;*/
+/*  line-height: 18px;*/
+/*  font-weight: 600;*/
+/*  color: white;*/
+/*}*/
