@@ -89,19 +89,16 @@
   </ul>
 </nav>
 
-
-
-
 <form class="example-form">
   <ngx-typed-js [strings]="['Summarize', 'learn faster', 'learn efficiently', 'Upload text']" [typeSpeed]="90" [backSpeed]="40" [loop]="true" [smartBackspace]="true" [shuffle]="true" [backDelay]="5000">
     <h1 class="autotype"> Use GYD to <span class="typing"></span></h1>
   </ngx-typed-js>
   <div class = "text">
-    <mat-form-field class="text-field" style="width: 40%">
+    <mat-form-field class="text-field" style="width: 35%">
       <mat-label>Text for summarization</mat-label>
       <textarea  matInput [(ngModel)]="textInput" name="input" rows="20" cols = "30"></textarea>
     </mat-form-field>
-    <mat-form-field class="text-field-output"  style="width: 40%">
+    <mat-form-field class="text-field-output"  style="width: 35%">
       <mat-label>Output for your text</mat-label>
       <textarea matInput [(ngModel)]="textOutput" name="output" rows="20" cols = "30">{{textOutput}}</textarea>
     </mat-form-field>
@@ -113,8 +110,8 @@
       </button>
     </div>
     <div class="obuttons">
-      <button mat-raised-button color="primary" (click)="onSubmit()">
-      Summarize!
+      <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="this.isButtonDisabled">
+        {{this.sumButton}}
       </button>
       <button mat-raised-button color="primary" routerLink="/knowledge-graph">
         Knowledge Graph!
@@ -138,4 +135,31 @@
 <!--  </div>-->
 </form>
 
+
+
+<h2>History</h2>
+<div class="aaa">
+  <div *ngFor="let item of userInputsOutputs | async">
+    <mat-card class="example-card">
+      <mat-card-content>
+        <p><strong>Input:</strong> {{ item.input }}</p>
+        <p><strong>Output:</strong> {{ item.output }}</p>
+        <p class = "dateCard">  {{ item.dateTime.toDate() | date:'medium' }}</p>
+        <div class="card-helper"  fxLayout="row" fxLayoutGap="16px">
+          <button mat-raised-button color="primary" (click)="summarizeAgain(item.input)">
+            Summarize Again!
+          </button>
+          <button mat-raised-button color="primary" (click)="copyOutput(item.output)">
+            Copy Output
+          </button>
+          <button mat-raised-button color="warn" (click)="deleteUserInputOutput(item.id)">
+            Delete
+          </button>
+        </div>
+
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+</div>
 

@@ -7,7 +7,22 @@
       "^/api": ""
     },
     "headers": {
-      "Access-Control-Allow-Origin": "*"
+      "Access-Control-Allow-Origin": "https://gydapp-b8dd4.web.app",
+      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type, Authorization"
+    }
+  },
+  "/api-pegasus/*": {
+    "target": "https://text-summarization-pegasus-model-jvgcexcekq-uc.a.run.app",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api-pegasus": ""
+    },
+    "headers": {
+      "Access-Control-Allow-Origin": "https://gydapp-b8dd4.web.app",
+      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type, Authorization"
     }
   }
 }

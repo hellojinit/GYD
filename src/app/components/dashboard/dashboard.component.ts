@@ -24,6 +24,7 @@ export class DashboardComponent implements OnInit{
 
   sumButton = "Summarize!"
   fileSelected = false;
+  isButtonDisabled = false;
 
   userInputsOutputsCollection: AngularFirestoreCollection<any>; // Firestore collection reference
   userInputsOutputs: Observable<any[]>; // Observable for user inputs and outputs data
@@ -33,7 +34,9 @@ export class DashboardComponent implements OnInit{
     private http: HttpClient,
     private firestore: AngularFirestore
   ) {
-    this.userInputsOutputsCollection = this.firestore.collection('users').doc(this.authService.userData.uid).collection('History'); // Reference to "userInputsOutputs" collection in Firestore
+    this.sumButton = "Summarize!";
+    // Reference to "userInputsOutputs" collection in Firestore
+    this.userInputsOutputsCollection = this.firestore.collection('users').doc(this.authService.userData.uid).collection('History-sum');
     this.userInputsOutputs = this.userInputsOutputsCollection.snapshotChanges().pipe(
       map(actions => {
         // Map the snapshot changes to an array of user inputs and outputs data
@@ -68,6 +71,7 @@ export class DashboardComponent implements OnInit{
     // Read the file as text
     reader.readAsText(file);
   }
+
   onUpload() {
     console.log(this.fileSelected);
     if (this.fileSelected) {
@@ -78,15 +82,29 @@ export class DashboardComponent implements OnInit{
   }
 
   onSubmit() {
+    this.isButtonDisabled = true;
+    let url = '';
+    if (this.sumButton == "Summarize!") {
+      url = `api/summarize/${encodeURIComponent(this.textInput)}`;
+    } else {
+      url = `/api-pegasus/summarize/${encodeURIComponent(this.textInput)}`;
+    }
     this.sumButton = "Summarize Again!";
-    const url = `api/summarize/${this.textInput}`;
-    console.log('Submitted')
-    this.textOutput = 'Summarizing..'
+    console.log('Submitted to :', url);
+    this.textOutput = 'Summarizing...'
     this.http.get(url).subscribe((response: any) => {
       console.log(response);
       this.textOutput = response.summary;
       this.saveUserInputOutput(this.textInput, this.textOutput);
-    });
+      this.isButtonDisabled = false;
+    },
+      (error: any) => {
+        console.error(error); // Log the error to console or handle it as needed
+        // You can also update the UI to display an error message, or take other actions based on the error
+        alert('Error occurred while summarizing, please try again!');
+        this.textOutput = "";
+        this.isButtonDisabled = false;
+      });
   }
 
   saveUserInputOutput(input: string, output: string) {
@@ -95,7 +113,8 @@ export class DashboardComponent implements OnInit{
     this.userInputsOutputsCollection.add({
       input: input,
       output: output,
-      dateTime: dateTime
+      dateTime: dateTime,
+      type: 'sum'
     })
       .then(() => {
         console.log('User input and output saved to Firestore successfully.');
@@ -122,8 +141,9 @@ export class DashboardComponent implements OnInit{
       });
   }
 
-  summarizeAgain(itemInput: string) {
+  summarizeAgain(itemInput: string): void {
     this.textInput = itemInput
+    this.sumButton = "Summarize Again!"
     this.onSubmit()
   }
 

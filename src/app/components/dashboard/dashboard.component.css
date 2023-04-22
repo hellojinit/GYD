@@ -181,34 +181,20 @@ h2 {
 
 .example-card {
   color: #ECEFF1;
-  background: #4c0170;
+  background: #333333;
   /*padding: 3%;*/
-  margin: 3%;
-  width: 93%;
+  margin-top: 3vw;
+  margin-bottom: 3vw;
+  margin-left: 15vw;
+  width: 70vw;
   border-radius: 20px;
 }
-
-.aaa {
-  /*display: flex;*/
-  /*flex-direction: column;*/
-  /*align-items: center;*/
-  /*padding-left: 5%;*/
-  /*max-width: 100%;*/
-  /*margin: 2em auto;*/
-  /*text-align: center;*/
-}
-
-
-/*.typing {*/
-/*  color: white;*/
-/*}*/
 
 .autotype {
   color: white
 }
 
 
-
-/*.card-helper {*/
-/*  justify-content: flex-end;*/
-/*}*/
+.card-helper {
+  justify-content: flex-end;
+}

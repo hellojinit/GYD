@@ -7,10 +7,12 @@ html, body {
   color: #000000; /* set text color to white for contrast */
   /*background: radial-gradient(circle, #48088b, black);*/
   font-weight: lighter;
+  background: #333333;
 }
 body {
   margin: 0;
   font-family: Copperplate, sans-serif;
+  background: #333333;
 }
 h1 {
   text-align: center;
@@ -20,5 +22,6 @@ h1 {
 h2 {
   text-align: center;
   font-family: Copperplate, sans-serif;
+  color: white;
 }
 

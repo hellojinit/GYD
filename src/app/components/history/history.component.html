@@ -89,11 +89,9 @@
   </ul>
 </nav>
 
-
-
-<h2>History</h2>
+<h2>Text Summarization History</h2>
 <div class="aaa">
-  <div *ngFor="let item of userInputsOutputs | async">
+  <div *ngFor="let item of userTextSumInputsOutputs | async">
     <mat-card class="example-card">
       <mat-card-content>
         <p><strong>Input:</strong> {{ item.input }}</p>
@@ -111,5 +109,6 @@
       </mat-card-content>
     </mat-card>
   </div>
-
 </div>
+
+<h2>Knowledge Graph History</h2>

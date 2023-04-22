@@ -4,6 +4,7 @@ import { HttpClient } from "@angular/common/http";
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+
 @Component({
   selector: 'app-history',
   templateUrl: './history.component.html',
@@ -11,18 +12,23 @@ import { map } from 'rxjs/operators';
 })
 export class HistoryComponent {
 
-  userInputsOutputsCollection: AngularFirestoreCollection<any>; // Firestore collection reference
-  userInputsOutputs: Observable<any[]>; // Observable for user inputs and outputs data
+  userTextSumCollection: AngularFirestoreCollection<any>; // Firestore collection reference
+  userTextSumInputsOutputs: Observable<any[]>; // Observable for user inputs and outputs data
+
+
+  userKGCollection: AngularFirestoreCollection<any>; // Firestore collection reference
+  userKGs: Observable<any[]>; // Observable for user inputs and outputs data
 
   constructor(
     public authService: AuthService,
     private http: HttpClient,
     private firestore: AngularFirestore
   ) {
+    // text summarization
     if (this.authService.userData.uid != null) {
-      this.userInputsOutputsCollection = this.firestore.collection('users').doc(this.authService.userData.uid).collection('History');
+      this.userTextSumCollection = this.firestore.collection('users').doc(this.authService.userData.uid).collection('History-sum');
       // Reference to "userInputsOutputs" collection in Firestore
-      this.userInputsOutputs = this.userInputsOutputsCollection.snapshotChanges().pipe(
+      this.userTextSumInputsOutputs = this.userTextSumCollection.snapshotChanges().pipe(
         map(actions => {
           // Map the snapshot changes to an array of user inputs and outputs data
           return actions.map(a => {
@@ -36,9 +42,44 @@ export class HistoryComponent {
         })
       );
     } else {
-      this.userInputsOutputsCollection = this.firestore.collection('users').doc('56pBT5yueRdWeRUJaRjzXuPk1io2').collection('History');
+      this.userTextSumCollection = this.firestore.collection('users').doc('56pBT5yueRdWeRUJaRjzXuPk1io2').collection('History-sum');
       // Reference to "userInputsOutputs" collection in Firestore
-      this.userInputsOutputs = this.userInputsOutputsCollection.snapshotChanges().pipe(
+      this.userTextSumInputsOutputs = this.userTextSumCollection.snapshotChanges().pipe(
+        map(actions => {
+          // Map the snapshot changes to an array of user inputs and outputs data
+          return actions.map(a => {
+            const data = a.payload.doc.data();
+            const id = a.payload.doc.id;
+            return { id, ...data };
+          }).sort((a, b) => {
+            // Sort the data array by date and time in descending order
+            return b.dateTime.toDate().getTime() - a.dateTime.toDate().getTime();
+          });
+        })
+      );
+    }
+
+    // KGs
+    if (this.authService.userData.uid != null) {
+      this.userKGCollection = this.firestore.collection('users').doc(this.authService.userData.uid).collection('History-kg');
+      // Reference to "userInputsOutputs" collection in Firestore
+      this.userKGs = this.userKGCollection.snapshotChanges().pipe(
+        map(actions => {
+          // Map the snapshot changes to an array of user inputs and outputs data
+          return actions.map(a => {
+            const data = a.payload.doc.data();
+            const id = a.payload.doc.id;
+            return { id, ...data };
+          }).sort((a, b) => {
+            // Sort the data array by date and time in descending order
+            return b.dateTime.toDate().getTime() - a.dateTime.toDate().getTime();
+          });
+        })
+      );
+    } else {
+      this.userKGCollection = this.firestore.collection('users').doc('56pBT5yueRdWeRUJaRjzXuPk1io2').collection('History-kg');
+      // Reference to "userInputsOutputs" collection in Firestore
+      this.userKGs = this.userKGCollection.snapshotChanges().pipe(
         map(actions => {
           // Map the snapshot changes to an array of user inputs and outputs data
           return actions.map(a => {
@@ -61,20 +102,58 @@ export class HistoryComponent {
   }
 
   fetchUserHistory() {
-    this.userInputsOutputs.subscribe((historyData: any[]) => {
+    this.userTextSumInputsOutputs.subscribe((historyData: any[]) => {
       console.log('User history data:', historyData);
       // Do whatever you want with the user history data, e.g., update a local array to display in the UI
     });
   }
+
   deleteUserInputOutput(itemId: string) {
     // Delete the document from Firestore using the document ID
-    this.userInputsOutputsCollection.doc(itemId).delete()
+    this.userTextSumCollection.doc(itemId).delete()
       .then(() => {
         console.log('User input and output deleted from Firestore successfully.');
       })
       .catch((error) => {
         console.error('Error deleting user input and output from Firestore: ', error);
       });
+  }
+
+  deleteKGs(itemId: string) {
+    // Delete the document from Firestore using the document ID
+    this.userKGCollection.doc(itemId).delete()
+      .then(() => {
+        console.log('User input and output deleted from Firestore successfully.');
+      })
+      .catch((error) => {
+        console.error('Error deleting user input and output from Firestore: ', error);
+      });
+  }
+
+  deleteAllUserHistory() {
+    // const userHistoryRef: AngularFirestoreCollection<any> = this.firestore.collection('users').doc(this.authService.userData.uid).collection('History');
+    this.userTextSumCollection.get().subscribe(querySnapshot => {
+      querySnapshot.forEach(doc => {
+        doc.ref.delete().then(() => {
+          alert("Your history has been successfully deleted!");
+          console.log('User history deleted from Firestore successfully.');
+        })
+          .catch((error) => {
+            console.error('Error deleting user history from Firestore: ', error);
+          });
+      });
+    });
+    this.userKGCollection.get().subscribe(querySnapshot => {
+      querySnapshot.forEach(doc => {
+        doc.ref.delete().then(() => {
+          alert("Your history has been successfully deleted!");
+          console.log('User history deleted from Firestore successfully.');
+        })
+          .catch((error) => {
+            console.error('Error deleting user history from Firestore: ', error);
+          });
+      });
+    });
   }
 
   copyOutput(output: string): void {

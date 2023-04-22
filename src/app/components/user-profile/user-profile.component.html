@@ -112,10 +112,10 @@
   <mat-card-content>
     <form>
           <!-- Main content -->
-            <h1> User Profile</h1>
+            <h1 style="color: black"> User Profile</h1>
             <!-- Show user data when logged in -->
             <div class="row" *ngIf="authService.userData as user">
-                <h2>Hello, {{(user.displayName) ? user.displayName : 'User'}}</h2>
+                <h2 style="color: black">Hello, {{(user.displayName) ? user.displayName : 'User'}}</h2>
                 <p>User ID: <b>{{user.uid}}</b></p>
                 <p>Email: <b>{{user.email}}</b></p>
                 <p>Email Verified: <b>{{user.emailVerified}}</b></p>

@@ -136,3 +136,15 @@ nav ul,nav li {
 .card-helper {
   justify-content: flex-end;
 }
+
+
+.example-card {
+  color: #ECEFF1;
+  background: #333333;
+  /*padding: 3%;*/
+  margin-top: 3vw;
+  margin-bottom: 3vw;
+  margin-left: 15vw;
+  width: 70vw;
+  border-radius: 20px;
+}
