@@ -85,9 +85,9 @@ export class DashboardComponent implements OnInit{
     this.isButtonDisabled = true;
     let url = '';
     if (this.sumButton == "Summarize!") {
-      url = `api/summarize/${encodeURIComponent(this.textInput)}`;
+      url = `https://text-summarization-model-jvgcexcekq-uc.a.run.app/summarize/${encodeURIComponent(this.textInput)}`;
     } else {
-      url = `/api-pegasus/summarize/${encodeURIComponent(this.textInput)}`;
+      url = `api-pegasus/summarize_pegasus/${encodeURIComponent(this.textInput)}`;
     }
     this.sumButton = "Summarize Again!";
     console.log('Submitted to :', url);
@@ -159,4 +159,6 @@ export class DashboardComponent implements OnInit{
     // Show a notification or feedback to indicate that the text has been copied
     alert('Output text has been copied to clipboard!');
   }
+
+
 }
