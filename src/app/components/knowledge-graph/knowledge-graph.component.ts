@@ -30,10 +30,10 @@ export class KnowledgeGraphComponent implements OnInit {
     // Add nodes and edges from relation data
     this.relationsData.relations.forEach(relation => {
       if (!nodes.get(relation.head)) {
-        nodes.add({id: relation.head});
+        nodes.add({id: relation.head, label: relation.head, color: {border: this.getRandomColor(), background: "white"} });
       }
       if (!nodes.get(relation.tail)) {
-        nodes.add({id: relation.tail});
+        nodes.add({id: relation.tail, label: relation.tail, color: {border: this.getRandomColor(), background: "white"} });
       }
       // Check if the edge already exists in the dataset before adding
       if (!edges.get(relation.head + '-' + relation.tail)) {
@@ -45,17 +45,56 @@ export class KnowledgeGraphComponent implements OnInit {
     const options = {
       nodes: {
         shape: "dot",
-        size: 16,
+        size: 32,
         font: {
-          size: 16,
-          color: "#000000"
-        }
+          size: 24,
+          color: "black"
+        },
+        borderWidth: 5,
+        // borderWidthSelected: 8,
+        // size: 24,
+        color: {
+          border: "white",
+          background: "black",
+          // highlight: {
+          //   border: "black",
+          //   background: "white",
+          // },
+          hover: {
+            border: "black",
+            background: "DarkOrchid"
+          },
+        },
       },
       edges: {
-        width: 2
+        width: 4,
+        color: "#333333",
+        font: {
+          size: 16,
+          strokeColor: "transparent",
+          color: "black"
+        }
       },
       interaction: {
         hover: true
+      },
+      physics: {
+        enabled: true,
+        repulsion: {
+          centralGravity: 0.2,
+          damping: 0.09,
+          nodeDistance: 200,
+          springConstant: 0.05,
+          springLength: 200
+        },
+        solver: "repulsion",
+        stabilization: {
+          enabled: true,
+          fit: true,
+          iterations: 1000,
+          onlyDynamicEdges: false,
+          updateInterval: 50
+        }
       }
     };
 
@@ -69,6 +108,16 @@ export class KnowledgeGraphComponent implements OnInit {
     // this.renderer.setStyle(container, 'width', '500px');
     this.renderer.setStyle(container, 'background', 'purple');
     this.renderer.setStyle(container, 'border', 'white');
+    this.renderer.setStyle(container, 'background', '#eeeaea');
+  }
+
+  getRandomColor(): string {
+    const letters = "0123456789ABCDEF";
+    let color = "#";
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
   }
 
   saveAsImage() {

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../shared/services/auth.service';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient} from "@angular/common/http";
 
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
@@ -15,7 +15,6 @@ import { map } from 'rxjs/operators';
 })
 
 export class DashboardComponent implements OnInit{
-
   // @ts-ignore
   textInput: string;
   // @ts-ignore

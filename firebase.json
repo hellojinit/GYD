@@ -27,46 +27,8 @@
     ],
     "rewrites": [
       {
-        "source": "/api/**",
-        "function": "api"
-      },
-      {
-        "source": "/api-pegasus/**",
-        "function": "api-pegasus"
-      },
-      {
         "source": "**",
         "destination": "/index.html"
-      }
-    ],
-    "headers": [
-      {
-        "source": "/api/**",
-        "headers": [
-          {
-            "key": "Access-Control-Allow-Origin",
-            "value": "https://gydapp-b8dd4.web.app"
-          },
-          {
-            "key": "Access-Control-Allow-Methods",
-            "value": "GET, POST, PUT, DELETE, OPTIONS"
-          },
-          {
-            "key": "Access-Control-Allow-Headers",
-            "value": "Content-Type, Authorization"
-          }
-        ]
-      }
-    ],
-    "proxy": [
-      {
-        "source": "/api",
-        "target": "https://text-summarization-model-jvgcexcekq-uc.a.run.app",
-        "headers": {
-          "Access-Control-Allow-Origin": "https://gydapp-b8dd4.web.app",
-          "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-          "Access-Control-Allow-Headers": "Content-Type, Authorization"
-        }
       }
     ]
   },
