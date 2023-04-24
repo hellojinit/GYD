@@ -20,15 +20,10 @@
   ],
   "hosting": {
     "public": "dist/gyd-app",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
     "rewrites": [
       {
         "source": "**",
-        "destination": "/index.html"
+        "function": "app"
       }
     ]
   },

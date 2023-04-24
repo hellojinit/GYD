@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../shared/services/auth.service';
-import { HttpClient} from "@angular/common/http";
+import { HttpClient, HttpHeaders} from "@angular/common/http";
 
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
@@ -80,18 +80,43 @@ export class DashboardComponent implements OnInit{
     this.loading = !this.loading
   }
 
+  // callFirebaseCloudFunction(inputString: string): void {
+  //   const url = 'https://us-central1-gydapp-b8dd4.cloudfunctions.net/summarizeString'; // Update with your Firebase Cloud Function URL
+  //   const params = { string: inputString }; // Pass in the input string as a query parameter
+  //
+  //   console.log('firebase:');
+  //   this.http.get(url, { params }).subscribe(
+  //     (response: any) => {
+  //       console.log('firebase ret:');
+  //       console.log(response.summary); // Access the summary from the response
+  //       // You can update your UI or take other actions with the summary here
+  //     },
+  //     (error: any) => {
+  //       console.error(error); // Log the error to console or handle it as needed
+  //       // You can update your UI or take other actions based on the error
+  //     }
+  //   );
+  // }
   onSubmit() {
     this.isButtonDisabled = true;
     let url = '';
+    // this.callFirebaseCloudFunction(this.textInput);
     if (this.sumButton == "Summarize!") {
-      url = `api/summarize/${encodeURIComponent(this.textInput)}`;
+      url = `/api/summarize/${encodeURIComponent(this.textInput)}`;
     } else {
-      url = `second/summarize_pegasus/${encodeURIComponent(this.textInput)}`;
+      url = `/second/summarize_pegasus/${encodeURIComponent(this.textInput)}`;
     }
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*', // Update with appropriate allowed origins
+      'Access-Control-Allow-Methods': 'GET', // Update with appropriate allowed methods
+      'Access-Control-Allow-Headers': 'Content-Type',
+    });
+
     this.sumButton = "Summarize Again!";
     console.log('Submitted to :', url);
     this.textOutput = 'Summarizing...'
-    this.http.get(url).subscribe((response: any) => {
+    this.http.get(url, {headers: headers}).subscribe((response: any) => {
       console.log(response);
       this.textOutput = response.summary;
       this.saveUserInputOutput(this.textInput, this.textOutput);
