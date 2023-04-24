@@ -68,7 +68,7 @@ export class KnowledgeGraphComponent implements OnInit {
       },
       edges: {
         width: 4,
-        color: "#333333",
+        color: "white",
         font: {
           size: 16,
           strokeColor: "transparent",
@@ -108,7 +108,7 @@ export class KnowledgeGraphComponent implements OnInit {
     this.renderer.setStyle(container, 'align-items', 'center');
     this.renderer.setStyle(container, 'width', '100vw');
     this.renderer.setStyle(container, 'border', 'white');
-    this.renderer.setStyle(container, 'background', '#eeeaea');
+    this.renderer.setStyle(container, 'background', '#c9c8c8');
   }
 
   getRandomColor(): string {

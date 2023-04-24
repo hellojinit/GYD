@@ -141,32 +141,22 @@ form {
   text-align: center;
 }
 
-.actionbuttons {
-  display: flex;
-  justify-content: space-between;
-}
 
 .ubutton {
-  align-self: flex-start;
+  margin-right: 69vw;
+}
+.obuttons {
+  margin-top: -3vh;
+  margin-left: 54vw;
 }
 
-.obutton {
-  align-self: flex-end;
+.actionbuttons button{
+  margin-right: 1%;
 }
-/*.ubutton {*/
-/*  left: vw;*/
-/*}*/
-/*.obuttons {*/
-/*  margin-top: -2%;*/
-/*  margin-left: 58%;*/
-/*}*/
-/*.actionbuttons button{*/
-/*  margin-right: 1%;*/
-/*}*/
 
-/*.actionbuttons {*/
-/*  padding-left: 1.7%;*/
-/*}*/
+.actionbuttons {
+  padding-left: 1.7%;
+}
 
 
 .text textarea{
@@ -177,6 +167,7 @@ form {
   color: white;
   align-items: center;
   display: flex;
+  justify-content: center;
 }
 
 .text-field {
