@@ -4,7 +4,7 @@
 
 .area {
   float: left;
-  background: #111111;
+  background: #333333;;
   color: white;
   width: 100%;
   height: 100%;
@@ -15,6 +15,7 @@
 h1 {
   color: white;
 }
+
 
 
 mat-icon {
@@ -33,7 +34,7 @@ mat-icon {
 }
 
 .main-menu {
-  background: rgba(58, 58, 58, 0.35);
+  background: #000000;
   /*border-right:1px solid #4c0170;*/
   position:absolute;
   top:0;
@@ -121,7 +122,7 @@ nav ul,nav li {
 }
 .main-menu li:hover>a,nav.main-menu li.active>a,.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus,.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,.dashboard-page nav.dashboard-menu ul li.active a {
   color:#fff;
-  background-color:#000000;
+  background-color:#333333;
   border-radius: 10px;
   margin: 4%;
 }
@@ -132,6 +133,12 @@ nav ul,nav li {
   src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff');
 }
 
+
+
+.download {
+  float:right;
+  margin-right: 3vw;
+}
 
 /*!*!* component.css *!*!*/
 /*#networkContainer {*/

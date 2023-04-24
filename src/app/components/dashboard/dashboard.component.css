@@ -2,9 +2,10 @@
 @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
 @import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
 
+
 .area {
   float: left;
-  background: #111111;
+  background: #333333;;
   color: white;
   width: 100%;
   height: 100%;
@@ -15,6 +16,7 @@
 h1 {
   color: white;
 }
+
 
 
 mat-icon {
@@ -33,7 +35,7 @@ mat-icon {
 }
 
 .main-menu {
-  background: rgba(58, 58, 58, 0.35);
+  background: #000000;
   /*border-right:1px solid #4c0170;*/
   position:absolute;
   top:0;
@@ -121,7 +123,7 @@ nav ul,nav li {
 }
 .main-menu li:hover>a,nav.main-menu li.active>a,.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus,.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,.dashboard-page nav.dashboard-menu ul li.active a {
   color:#fff;
-  background-color:#000000;
+  background-color:#333333;
   border-radius: 10px;
   margin: 4%;
 }
@@ -139,28 +141,42 @@ form {
   text-align: center;
 }
 
-.ubutton {
-  margin-left: -77%;
-}
-.obuttons {
-  margin-top: -2%;
-  margin-left: 58%;
-}
-.actionbuttons button{
-  margin-right: 1%;
+.actionbuttons {
+  display: flex;
+  justify-content: space-between;
 }
 
-.actionbuttons {
-  padding-left: 1.7%;
+.ubutton {
+  align-self: flex-start;
 }
+
+.obutton {
+  align-self: flex-end;
+}
+/*.ubutton {*/
+/*  left: vw;*/
+/*}*/
+/*.obuttons {*/
+/*  margin-top: -2%;*/
+/*  margin-left: 58%;*/
+/*}*/
+/*.actionbuttons button{*/
+/*  margin-right: 1%;*/
+/*}*/
+
+/*.actionbuttons {*/
+/*  padding-left: 1.7%;*/
+/*}*/
+
 
 .text textarea{
   margin-right: 3%;
 }
 
 .text {
-  padding-right: 0%;
   color: white;
+  align-items: center;
+  display: flex;
 }
 
 .text-field {

@@ -104,9 +104,9 @@ export class KnowledgeGraphComponent implements OnInit {
     // @ts-ignore
     const container = this.networkContainer.nativeElement;
     this.network = new Network(container, {nodes, edges}, options);
-    this.renderer.setStyle(container, 'height', '500px');
-    // this.renderer.setStyle(container, 'width', '500px');
-    this.renderer.setStyle(container, 'background', 'purple');
+    this.renderer.setStyle(container, 'height', '95vh');
+    this.renderer.setStyle(container, 'align-items', 'center');
+    this.renderer.setStyle(container, 'width', '100vw');
     this.renderer.setStyle(container, 'border', 'white');
     this.renderer.setStyle(container, 'background', '#eeeaea');
   }

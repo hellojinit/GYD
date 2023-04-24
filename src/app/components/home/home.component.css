@@ -130,6 +130,8 @@ h4 {
   position: fixed;
   /*display: inline-block;*/
   height: 100%;
+  top: 0;
+  left: 0;
   width: 100%;
   background-size: cover;
   background: rgba(0, 0, 0, 0.1);
