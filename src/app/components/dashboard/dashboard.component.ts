@@ -84,9 +84,9 @@ export class DashboardComponent implements OnInit{
     this.isButtonDisabled = true;
     let url = '';
     if (this.sumButton == "Summarize!") {
-      url = `https://text-summarization-model-jvgcexcekq-uc.a.run.app/summarize/${encodeURIComponent(this.textInput)}`;
+      url = `api/summarize/${encodeURIComponent(this.textInput)}`;
     } else {
-      url = `api-pegasus/summarize_pegasus/${encodeURIComponent(this.textInput)}`;
+      url = `second/summarize_pegasus/${encodeURIComponent(this.textInput)}`;
     }
     this.sumButton = "Summarize Again!";
     console.log('Submitted to :', url);

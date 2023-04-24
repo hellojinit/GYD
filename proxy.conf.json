@@ -12,12 +12,12 @@
       "Access-Control-Allow-Headers": "Content-Type, Authorization"
     }
   },
-  "/api-pegasus/*": {
+  "/second/*": {
     "target": "https://text-summarization-pegasus-model-jvgcexcekq-uc.a.run.app",
     "secure": true,
     "changeOrigin": true,
     "pathRewrite": {
-      "^/api-pegasus": ""
+      "^/second": ""
     },
     "headers": {
       "Access-Control-Allow-Origin": "https://gydapp-b8dd4.web.app",
