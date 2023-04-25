@@ -25,6 +25,7 @@ export class DashboardComponent implements OnInit{
   fileSelected = false;
   isButtonDisabled = false;
 
+  kgbuttonDisabed= false;
   userInputsOutputsCollection: AngularFirestoreCollection<any>; // Firestore collection reference
   userInputsOutputs: Observable<any[]>; // Observable for user inputs and outputs data
 
@@ -132,7 +133,34 @@ export class DashboardComponent implements OnInit{
   }
 
   submitKG() {
+    this.kgbuttonDisabed = true;
+    let url = '';
+    // this.callFirebaseCloudFunction(this.textInput);
 
+    url = `/third/graph/${encodeURIComponent(this.textInput)}`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*', // Update with appropriate allowed origins
+      'Access-Control-Allow-Methods': 'GET', // Update with appropriate allowed methods
+      'Access-Control-Allow-Headers': 'Content-Type',
+    });
+
+    console.log('Submitted to :', url);
+    this.textOutput = 'Graphing...'
+    this.http.get(url, {headers: headers}).subscribe((response: any) => {
+        console.log(response);
+
+        // this.textOutput = response.summary;
+        // this.saveUserInputOutput(this.textInput, this.textOutput);
+        this.kgbuttonDisabed = false;
+      },
+      (error: any) => {
+        console.error(error); // Log the error to console or handle it as needed
+        // You can also update the UI to display an error message, or take other actions based on the error
+        alert('Error occurred while summarizing, please try again!');
+        this.textOutput = "";
+        this.kgbuttonDisabed = false;
+      });
   }
 
   saveUserInputOutput(input: string, output: string) {

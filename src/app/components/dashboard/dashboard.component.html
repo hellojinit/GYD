@@ -113,7 +113,7 @@
       <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="this.isButtonDisabled">
         {{this.sumButton}}
       </button>
-      <button mat-raised-button color="primary" (click)="submitKG()" [routerLink]="['/knowledge-graph']" [queryParams]="{data: 'hi'}">
+      <button mat-raised-button color="primary" (click)="submitKG()" [disabled]="this.kgbuttonDisabed">
         Knowledge Graph!
       </button>
       <button mat-raised-button color="warn" routerLink="/knowledge-graph">
