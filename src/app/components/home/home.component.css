@@ -136,7 +136,7 @@ h4 {
 
 .use {
   padding-top: 35%;
-  padding-bottom: 30vh;
+  padding-bottom: 38vh;
 }
 
 /*#topandbottom {*/
@@ -208,7 +208,7 @@ h4 {
 }
 
 .text {
-  top: 134vh;
+  top: 128vh;
   margin: 2em auto;
   text-align: center;
   position: relative; /* make sure the element is positioned relative to its normal position */
