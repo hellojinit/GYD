@@ -3,6 +3,7 @@ import { Network, DataSet, Node, Edge } from 'vis-network/standalone/esm/vis-net
 import html2canvas from 'html2canvas'; // Import html2canvas library
 
 import { AuthService } from '../../shared/services/auth.service';
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-knowledge-graph',
@@ -20,10 +21,17 @@ export class KnowledgeGraphComponent implements OnInit {
   constructor(
     public authService: AuthService,
     private renderer: Renderer2,
-    private el: ElementRef
+    private el: ElementRef,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
+
+    this.route.queryParams.subscribe(params => {
+      const data = params['data'];
+      // Use the retrieved data in your component logic
+      console.log('Data from query parameters:', data);
+    });
     const nodes = new DataSet<Node>();
     const edges = new DataSet<Edge>();
 

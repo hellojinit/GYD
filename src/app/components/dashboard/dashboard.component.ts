@@ -131,6 +131,10 @@ export class DashboardComponent implements OnInit{
       });
   }
 
+  submitKG() {
+
+  }
+
   saveUserInputOutput(input: string, output: string) {
     const dateTime = new Date();
     // Create a new document with a unique ID in the "userInputsOutputs" collection

@@ -64,6 +64,20 @@ app.use('/second', createProxyMiddleware({
   }
 }));
 
+// Proxy /second/* requests to the target API
+app.use('/third', createProxyMiddleware({
+  target: 'https://text-summarization-pegasus-model-jvgcexcekq-uc.a.run.app',
+  changeOrigin: true,
+  pathRewrite: {
+    '^/third': ''
+  },
+  headers: {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type, Authorization'
+  }
+}));
+
 // Other Firebase Cloud Functions logic
 // ...
 
