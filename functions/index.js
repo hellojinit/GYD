@@ -66,7 +66,7 @@ app.use('/second', createProxyMiddleware({
 
 // Proxy /second/* requests to the target API
 app.use('/third', createProxyMiddleware({
-  target: 'https://text-summarization-pegasus-model-jvgcexcekq-uc.a.run.app',
+  target: 'https://text2graph-fmml3v2fuq-uc.a.run.app',
   changeOrigin: true,
   pathRewrite: {
     '^/third': ''

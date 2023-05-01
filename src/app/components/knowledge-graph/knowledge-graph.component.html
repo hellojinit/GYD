@@ -88,6 +88,8 @@
   </ul>
 </nav>
 
+<div *ngIf="showLoading"><h1>Loading...</h1></div>
+
 
 <div #networkContainer></div>
 <button cButton color="light" class = "download" (click)="saveAsImage()">Download Image</button>

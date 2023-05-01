@@ -3,8 +3,13 @@ import { AuthService } from '../../shared/services/auth.service';
 import { HttpClient, HttpHeaders} from "@angular/common/http";
 
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+// import { AngularFireStorage } from '@angular/fire/compat/storage';
+
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import {Router} from "@angular/router";
+// import { v4 as uuidv4 } from 'uuid';
+
 
 
 @Component({
@@ -26,17 +31,20 @@ export class DashboardComponent implements OnInit{
   isButtonDisabled = false;
 
   kgbuttonDisabed= false;
-  userInputsOutputsCollection: AngularFirestoreCollection<any>; // Firestore collection reference
+  userInputsOutputsCollection: AngularFirestoreCollection<any>;
+  userKgCollection: AngularFirestoreCollection<any>; // Firestore collection reference
   userInputsOutputs: Observable<any[]>; // Observable for user inputs and outputs data
 
   constructor(
     public authService: AuthService,
     private http: HttpClient,
-    private firestore: AngularFirestore
+    private firestore: AngularFirestore,
+    private router: Router
   ) {
     this.sumButton = "Summarize!";
     // Reference to "userInputsOutputs" collection in Firestore
     this.userInputsOutputsCollection = this.firestore.collection('users').doc(this.authService.userData.uid).collection('History-sum');
+    this.userKgCollection = this.firestore.collection('users').doc(this.authService.userData.uid).collection('History-kg');
     this.userInputsOutputs = this.userInputsOutputsCollection.snapshotChanges().pipe(
       map(actions => {
         // Map the snapshot changes to an array of user inputs and outputs data
@@ -56,6 +64,33 @@ export class DashboardComponent implements OnInit{
   ngOnInit(): void {
 
   }
+
+  saveKgData(jsonData: any, inputText: string) {
+    // const user = this.authService;
+    const uid = this.authService.userData.uid;
+    // const uuid = uuidv4();
+    const dateTime = new Date();
+    // const filePath = `users/${uid}/${uuid}.json`;
+    // const fileRef = this.storage.ref(filePath);
+    // const task = fileRef.putString(JSON.stringify(jsonData));
+    const relations = JSON.stringify(jsonData);
+    // task.then(() => {
+    this.userKgCollection.add({
+      relations: relations,
+      input: inputText,
+      dateTime: dateTime,
+      type: 'kg'
+    })
+      .then(() => {
+        console.log('User input and Kg saved to Firestore successfully.');
+        this.router.navigate(['/knowledge-graph']);
+      })
+      .catch((error) => {
+        console.error('Error saving user input and Kg to Firestore: ', error);
+      });
+    // });
+  }
+
   onChange(event: any) {
     console.log(event.target.files[0])
     this.fileSelected = true;
@@ -81,23 +116,6 @@ export class DashboardComponent implements OnInit{
     this.loading = !this.loading
   }
 
-  // callFirebaseCloudFunction(inputString: string): void {
-  //   const url = 'https://us-central1-gydapp-b8dd4.cloudfunctions.net/summarizeString'; // Update with your Firebase Cloud Function URL
-  //   const params = { string: inputString }; // Pass in the input string as a query parameter
-  //
-  //   console.log('firebase:');
-  //   this.http.get(url, { params }).subscribe(
-  //     (response: any) => {
-  //       console.log('firebase ret:');
-  //       console.log(response.summary); // Access the summary from the response
-  //       // You can update your UI or take other actions with the summary here
-  //     },
-  //     (error: any) => {
-  //       console.error(error); // Log the error to console or handle it as needed
-  //       // You can update your UI or take other actions based on the error
-  //     }
-  //   );
-  // }
   onSubmit() {
     this.isButtonDisabled = true;
     let url = '';
@@ -149,10 +167,11 @@ export class DashboardComponent implements OnInit{
     this.textOutput = 'Graphing...'
     this.http.get(url, {headers: headers}).subscribe((response: any) => {
         console.log(response);
-
         // this.textOutput = response.summary;
         // this.saveUserInputOutput(this.textInput, this.textOutput);
+        this.saveKgData(response, this.textInput);
         this.kgbuttonDisabed = false;
+
       },
       (error: any) => {
         console.error(error); // Log the error to console or handle it as needed

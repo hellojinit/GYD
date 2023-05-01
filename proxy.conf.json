@@ -26,7 +26,7 @@
     }
   },
   "/third/*": {
-    "target": "https://text-summarization-pegasus-model-jvgcexcekq-uc.a.run.app",
+    "target": "https://text2graph-fmml3v2fuq-uc.a.run.app",
     "secure": true,
     "changeOrigin": true,
     "pathRewrite": {
