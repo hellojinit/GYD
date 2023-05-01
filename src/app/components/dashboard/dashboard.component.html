@@ -117,9 +117,12 @@
       <button mat-raised-button color="primary" (click)="submitKG()" [disabled]="this.kgbuttonDisabed">
         Knowledge Graph!
       </button>
-      <button mat-raised-button color="warn" routerLink="/knowledge-graph">
-        Both!
+      <button mat-raised-button color="primary" (click)="goToQA()">
+        Ask Questions!
       </button>
+<!--      <button mat-raised-button color="warn" routerLink="/knowledge-graph">-->
+<!--        Both!-->
+<!--      </button>-->
     </div>
   </div>
   <div class="container" *ngIf="loading">
@@ -147,8 +150,11 @@
         <p><strong>Output:</strong> {{ item.output }}</p>
         <p class = "dateCard">  {{ item.dateTime.toDate() | date:'medium' }}</p>
         <div class="card-helper"  fxLayout="row" fxLayoutGap="16px">
+          <button mat-raised-button color="primary" (click)="goToQAHistory(item.input)">
+            Ask Questions!
+          </button>
           <button mat-raised-button color="primary" (click)="summarizeAgain(item.input)">
-            Summarize Again!
+            Summarize w/ different model!
           </button>
           <button mat-raised-button color="primary" (click)="copyOutput(item.output)">
             Copy Output

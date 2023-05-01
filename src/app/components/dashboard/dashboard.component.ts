@@ -65,6 +65,15 @@ export class DashboardComponent implements OnInit{
 
   }
 
+  goToQA() {
+    // this.router.navigate(['/qa', this.textInput]);
+    this.router.navigate(['/qa', { data: this.textInput }]);
+  }
+  goToQAHistory(str: string) {
+    // this.router.navigate(['/qa', this.textInput]);
+    this.router.navigate(['/qa', { data: str }]);
+  }
+
   saveKgData(jsonData: any, inputText: string) {
     // const user = this.authService;
     const uid = this.authService.userData.uid;
@@ -135,7 +144,7 @@ export class DashboardComponent implements OnInit{
         'Access-Control-Allow-Headers': 'Content-Type',
       });
 
-      this.sumButton = "Summarize Again!";
+      this.sumButton = "Summarize w/ different model!";
       console.log('Submitted to :', url);
       this.textOutput = 'Summarizing...'
       this.http.get(url, {headers: headers}).subscribe((response: any) => {

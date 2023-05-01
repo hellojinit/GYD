@@ -4,6 +4,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from '@angular/fire/compat/firestore';
 
 import { Observable } from 'rxjs';
+import {ActivatedRoute} from "@angular/router";
 @Component({
   selector: 'app-qa',
   templateUrl: './qa.component.html',
@@ -23,20 +24,25 @@ export class QaComponent {
   constructor(
     public authService: AuthService,
     private http: HttpClient,
-    private firestore: AngularFirestore
+    private firestore: AngularFirestore,
+    private route: ActivatedRoute
   ) {
     this.userQaCollection = this.firestore.collection('users').doc(this.authService.userData.uid).collection('History-qa');
 
   }
 
-  ngOnInit() { }
-
+  ngOnInit() {
+    this.textInput = this.route.snapshot.paramMap.get('data') || " ";
+  }
 
   onSubmit() {
 
     if (this.textInput != "" && this.questionInput != "") {
       this.isButtonDisabled = true;
       let url = '';
+      if (!this.questionInput.endsWith("?")) {
+        this.questionInput = this.questionInput + "?";
+      }
       // this.callFirebaseCloudFunction(this.textInput);
 
       url = `/forth/qa/${encodeURIComponent(this.textInput)}/${encodeURIComponent(this.questionInput)}`;
