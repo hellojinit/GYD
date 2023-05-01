@@ -7,7 +7,7 @@ import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/comp
 
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 // import { v4 as uuidv4 } from 'uuid';
 
 
@@ -39,8 +39,11 @@ export class DashboardComponent implements OnInit{
     public authService: AuthService,
     private http: HttpClient,
     private firestore: AngularFirestore,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) {
+    this.textInput = this.route.snapshot.paramMap.get('data') || " ";
+
     this.sumButton = "Summarize!";
     // Reference to "userInputsOutputs" collection in Firestore
     this.userInputsOutputsCollection = this.firestore.collection('users').doc(this.authService.userData.uid).collection('History-sum');

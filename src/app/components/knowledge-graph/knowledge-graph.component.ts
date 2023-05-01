@@ -5,9 +5,10 @@ import html2canvas from 'html2canvas'; // Import html2canvas library
 import { AuthService } from '../../shared/services/auth.service';
 
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
-import {ActivatedRoute} from "@angular/router";
+// import {ActivatedRoute, Router} from "@angular/router";
 import {Observable} from "rxjs";
 import {map} from "rxjs/operators";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-knowledge-graph',
@@ -26,14 +27,14 @@ export class KnowledgeGraphComponent implements OnInit {
   userKgs: Observable<any[]>;
   topKG: any;
   showLoading = true;
-  // mainNodes: DataSet<Node>;
-  // mainEdges: DataSet<Edge>;
+  bgColor = '#c9c8c8';
   constructor(
     public authService: AuthService,
     private renderer: Renderer2,
     private el: ElementRef,
     private firestore: AngularFirestore,
-    private route: ActivatedRoute
+    private router: Router
+    // private route: ActivatedRoute,
   ) {
     // this.mainNodes = new DataSet<Node>();
     // this.mainEdges = new DataSet<Edge>();
@@ -219,14 +220,36 @@ export class KnowledgeGraphComponent implements OnInit {
       // @ts-ignore
       const container = this.networkContainer.nativeElement;
       this.network = new Network(container, {nodes, edges}, options);
-      this.renderer.setStyle(container, 'height', '95vh');
+      this.renderer.setStyle(container, 'height', '90vh');
       this.renderer.setStyle(container, 'align-items', 'center');
       this.renderer.setStyle(container, 'width', '100vw');
       this.renderer.setStyle(container, 'border', 'white');
-      this.renderer.setStyle(container, 'background', '#c9c8c8');
+      this.renderer.setStyle(container, 'background', this.bgColor);
 
     }, 4000);
 
+  }
+  //
+  editText() {
+    this.router.navigate(['/text-summarization', { data: this.topKG.input }]);
+  }
+  changeBackgroundColor() {
+    if (this.bgColor == '#c9c8c8') {
+      // @ts-ignore
+      this.renderer.setStyle(this.networkContainer.nativeElement, 'background', 'LightGreen');
+      this.bgColor = 'LightGreen';
+      // this.colorMode = "Light Mode";
+      // PaleTurquoise
+    } else  if(this.bgColor == 'LightGreen') {
+// @ts-ignore
+      this.renderer.setStyle(this.networkContainer.nativeElement, 'background', 'PaleTurquoise');
+      this.bgColor = 'PaleTurquoise';
+    }else {
+      // @ts-ignore
+      this.renderer.setStyle(this.networkContainer.nativeElement, 'background', '#c9c8c8');
+      this.bgColor = '#c9c8c8';
+      // this.colorMode = "Dark Mode";
+    }
   }
 
   getRandomColor(): string {
