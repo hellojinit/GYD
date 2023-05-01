@@ -2,16 +2,24 @@
 
 
   <ul>
-    <li>
-      <a routerLink="/home">
-        <mat-icon [ngStyle]="{'color':'White'}">share</mat-icon>
+    <li class="has-subnav">
+      <a routerLink="/home" style="text-align: center;">
+        <img class="sidebar-logo" src="assets/logo.png" class="nav-icon">
         <span class="nav-text">GYD</span>
       </a>
     </li>
+
+    <style>
+      .nav-icon {
+        display: block;
+        width: 24px;
+        height: 24px;
+      }
+    </style>
     <hr class="sidebar-divider">
     <li class="has-subnav">
       <a routerLink="/dashboard">
-        <mat-icon [ngStyle]="{'color':'RebeccaPurple'}">home</mat-icon>
+        <mat-icon [ngStyle]="{'color':'purple'}">home</mat-icon>
         <span class="nav-text">
                           Dashboard
                         </span>
@@ -30,7 +38,7 @@
     </li>
     <li class="has-subnav">
       <a routerLink="/knowledge-graph">
-        <mat-icon [ngStyle]="{'color':'purple'}">graphic_eq</mat-icon>
+        <mat-icon [ngStyle]="{'color':'RebeccaPurple'}">graphic_eq</mat-icon>
         <span class="nav-text">
                          Knowledge Graph
                         </span>
@@ -95,9 +103,10 @@
 <div class = "whole-page">
   <div class="dashboard-container">
     <div class="dashboard-title">
-      <h1 class="block-title">USE GYD TO</h1>
-      <ngx-typed-js [strings]="['Summarize text', 'Graph Your Data', 'Ask Questions about your Text']" [typeSpeed]="90" [backSpeed]="40" [loop]="true" [smartBackspace]="true" [shuffle]="true" [backDelay]="5000">
-        <h2><span class="typing"></span></h2>
+      <h1 class="block-title">Welcome to the</h1>
+      <h1 class="title-dash">Dashboard</h1>
+      <ngx-typed-js [strings]="['Summarize text', 'Graph Your Data', 'Ask Questions about your Text']" [typeSpeed]="90" [backSpeed]="40" [loop]="true" [smartBackspace]="true" [backDelay]="5000">
+        <h2>Use GYD to <span class="typing"></span></h2>
       </ngx-typed-js>
     </div>
 
@@ -126,7 +135,7 @@
     <div style="display: flex; justify-content: center; gap: 20px;">
   <!--  <c-row>-->
   <!--    <c-col >-->
-      <c-card style="background-color: rebeccapurple; width: 35%;">
+      <c-card style="background-color: royalblue; width: 35%;">
         <video cCardImg="top" src="./assets/textDemo.mp4" autoplay muted loop></video>
         <c-card-body>
           <h5 cCardTitle style="color: whitesmoke">Text Summarization</h5>
@@ -138,7 +147,7 @@
       </c-card>
   <!--   </c-col>-->
   <!--  <c-col>-->
-      <c-card style="background-color: royalblue; width: 35%;">
+      <c-card style="background-color: rebeccapurple; width: 35%;">
         <video cCardImg="top" src="./assets/kg.mp4" autoplay muted loop></video>
         <c-card-body>
           <h5 cCardTitle style="color: whitesmoke">Knowledge Graph</h5>

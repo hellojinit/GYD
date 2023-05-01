@@ -134,6 +134,10 @@ nav ul,nav li {
 
 
 
+.sidebar-logo img {
+  display: block;
+  margin: 0 auto;
+}
 
 
 
@@ -231,27 +235,48 @@ h2 {
 
 .block-title {
   padding-top: 50px;
+  padding-bottom: 20px;
+  font-size: 3rem;
+  /*font-weight: bold;*/
+  /*text-transform: uppercase;*/
+  font-family: "SF Pro";
+  /*background: linear-gradient(90deg, #3522fa, #6251f8);*/
+  /*-webkit-background-clip: text;*/
+  /*-webkit-text-fill-color: transparent;*/
+}
+
+.title-dash {
+  font-size: 6em;
   padding-bottom: 50px;
-  font-size: 6rem;
+  padding-top: 15px;
   font-weight: bold;
-  text-transform: uppercase;
-  font-family: sans-serif;
-  background: linear-gradient(90deg, #3522fa, #6251f8);
+  font-family: "SF Pro";
+  color: white;
+  background: linear-gradient(140deg,  royalblue, rebeccapurple, royalblue, rebeccapurple);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
+}
+
+.typing {
+  /*background: linear-gradient(140deg,  royalblue, rebeccapurple, royalblue, rebeccapurple);*/
+  /*-webkit-background-clip: text;*/
+  /*-webkit-text-fill-color: transparent;*/
+  color: white;
+  font-size: 1em;
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: 1.7em;
   padding-top: 10px;
-  padding-bottom: 50px;
   font-weight: bold;
-  text-transform: uppercase;
-  font-family: sans-serif;
-  transform: skewX(-10deg);
-  background: linear-gradient(90deg, #3522fa, #6251f8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: white;
+  /*text-transform: uppercase;*/
+  font-family: "SF Pro";
+  /*transform: skewX(-10deg);*/
+  /*background: linear-gradient(90deg, #3522fa, #6251f8);*/
+  /*-webkit-background-clip: text;*/
+  /*-webkit-text-fill-color: transparent;*/
 
 }
 .dashboard-cards {
@@ -292,10 +317,10 @@ h2 {
 
 /* first card */
 c-card {
-  background-color: rebeccapurple;
+  background-color: royalblue;
 }
 
 /* second card */
 c-card:nth-of-type(2) {
-  background-color: royalblue;
+  background-color: purple;
 }
