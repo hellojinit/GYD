@@ -37,5 +37,18 @@
       "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
       "Access-Control-Allow-Headers": "Content-Type, Authorization"
     }
+  },
+  "/forth/*": {
+    "target": "https://questionanswering-fmml3v2fuq-uc.a.run.app",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/forth": ""
+    },
+    "headers": {
+      "Access-Control-Allow-Origin": "https://gydapp-b8dd4.web.app",
+      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type, Authorization"
+    }
   }
 }

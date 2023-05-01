@@ -90,4 +90,27 @@
 
 
 
-<h2>Q & A Coming Soon!</h2>
+<h2>Q & A!</h2>
+
+<div class = "text">
+  <mat-form-field class="text-field" style="width: 35%">
+    <mat-label>Text for Q & A</mat-label>
+    <textarea  matInput [(ngModel)]="textInput" name="input" rows="20" cols = "30"></textarea>
+  </mat-form-field>
+  <mat-form-field class="question-input"  style="width: 35%">
+    <mat-label>Your Question</mat-label>
+    <textarea matInput [(ngModel)]="questionInput" name="output" rows="20" cols = "30">{{questionInput}}</textarea>
+  </mat-form-field>
+  <mat-form-field class="text-field-output"  style="width: 35%">
+    <mat-label>Your Question</mat-label>
+    <textarea matInput [(ngModel)]="textOutput" name="output" rows="20" cols = "30">{{textOutput}}</textarea>
+  </mat-form-field>
+</div>
+<div class="actionbuttons">
+  <div class="obuttons">
+    <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="this.isButtonDisabled">
+      Ask!
+    </button>
+  </div>
+</div>
+
