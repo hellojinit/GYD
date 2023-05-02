@@ -16,8 +16,8 @@ export class HistoryComponent {
   userTextSumInputsOutputs: Observable<any[]>; // Observable for user inputs and outputs data
 
 
-  userKGCollection: AngularFirestoreCollection<any>; // Firestore collection reference
-  userKGs: Observable<any[]>; // Observable for user inputs and outputs data
+  userQaCollection: AngularFirestoreCollection<any>; // Firestore collection reference
+  userQas: Observable<any[]>; // Observable for user inputs and outputs data
 
   constructor(
     public authService: AuthService,
@@ -61,9 +61,9 @@ export class HistoryComponent {
 
     // KGs
     if (this.authService.userData.uid != null) {
-      this.userKGCollection = this.firestore.collection('users').doc(this.authService.userData.uid).collection('History-kg');
+      this.userQaCollection = this.firestore.collection('users').doc(this.authService.userData.uid).collection('History-qa');
       // Reference to "userInputsOutputs" collection in Firestore
-      this.userKGs = this.userKGCollection.snapshotChanges().pipe(
+      this.userQas = this.userQaCollection.snapshotChanges().pipe(
         map(actions => {
           // Map the snapshot changes to an array of user inputs and outputs data
           return actions.map(a => {
@@ -77,9 +77,9 @@ export class HistoryComponent {
         })
       );
     } else {
-      this.userKGCollection = this.firestore.collection('users').doc('56pBT5yueRdWeRUJaRjzXuPk1io2').collection('History-kg');
+      this.userQaCollection = this.firestore.collection('users').doc('56pBT5yueRdWeRUJaRjzXuPk1io2').collection('History-qa');
       // Reference to "userInputsOutputs" collection in Firestore
-      this.userKGs = this.userKGCollection.snapshotChanges().pipe(
+      this.userQas = this.userQaCollection.snapshotChanges().pipe(
         map(actions => {
           // Map the snapshot changes to an array of user inputs and outputs data
           return actions.map(a => {
@@ -119,9 +119,9 @@ export class HistoryComponent {
       });
   }
 
-  deleteKGs(itemId: string) {
+  deleteQas(itemId: string) {
     // Delete the document from Firestore using the document ID
-    this.userKGCollection.doc(itemId).delete()
+    this.userQaCollection.doc(itemId).delete()
       .then(() => {
         console.log('User input and output deleted from Firestore successfully.');
       })
@@ -129,32 +129,32 @@ export class HistoryComponent {
         console.error('Error deleting user input and output from Firestore: ', error);
       });
   }
-
-  deleteAllUserHistory() {
-    // const userHistoryRef: AngularFirestoreCollection<any> = this.firestore.collection('users').doc(this.authService.userData.uid).collection('History');
-    this.userTextSumCollection.get().subscribe(querySnapshot => {
-      querySnapshot.forEach(doc => {
-        doc.ref.delete().then(() => {
-          alert("Your history has been successfully deleted!");
-          console.log('User history deleted from Firestore successfully.');
-        })
-          .catch((error) => {
-            console.error('Error deleting user history from Firestore: ', error);
-          });
-      });
-    });
-    this.userKGCollection.get().subscribe(querySnapshot => {
-      querySnapshot.forEach(doc => {
-        doc.ref.delete().then(() => {
-          alert("Your history has been successfully deleted!");
-          console.log('User history deleted from Firestore successfully.');
-        })
-          .catch((error) => {
-            console.error('Error deleting user history from Firestore: ', error);
-          });
-      });
-    });
-  }
+  //
+  // deleteAllUserHistory() {
+  //   // const userHistoryRef: AngularFirestoreCollection<any> = this.firestore.collection('users').doc(this.authService.userData.uid).collection('History');
+  //   this.userTextSumCollection.get().subscribe(querySnapshot => {
+  //     querySnapshot.forEach(doc => {
+  //       doc.ref.delete().then(() => {
+  //         alert("Your history has been successfully deleted!");
+  //         console.log('User history deleted from Firestore successfully.');
+  //       })
+  //         .catch((error) => {
+  //           console.error('Error deleting user history from Firestore: ', error);
+  //         });
+  //     });
+  //   });
+  //   this.userKCollection.get().subscribe(querySnapshot => {
+  //     querySnapshot.forEach(doc => {
+  //       doc.ref.delete().then(() => {
+  //         alert("Your history has been successfully deleted!");
+  //         console.log('User history deleted from Firestore successfully.');
+  //       })
+  //         .catch((error) => {
+  //           console.error('Error deleting user history from Firestore: ', error);
+  //         });
+  //     });
+  //   });
+  // }
 
   copyOutput(output: string): void {
     // Create a new text area element to hold the output text

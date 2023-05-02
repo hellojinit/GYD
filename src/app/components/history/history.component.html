@@ -114,3 +114,30 @@
   </div>
 </div>
 
+
+
+<h2>Q & A History</h2>
+<div class="aaa">
+  <div *ngFor="let item of userQas | async">
+    <mat-card class="example-card">
+      <mat-card-content>
+        <p><strong>Paragraph:</strong> {{ item.paragraph }}</p>
+        <p><strong>Question:</strong> {{ item.question }}</p>
+        <p><strong>Answer:</strong> {{ item.output }}</p>
+        <p class = "dateCard">  {{ item.dateTime.toDate() | date:'medium' }}</p>
+        <div class="card-helper"  fxLayout="row" fxLayoutGap="16px">
+          <button mat-raised-button color="primary" (click)="copyOutput(item.output)">
+            Copy Answer
+          </button>
+          <button mat-raised-button color="warn" (click)="deleteQas(item.id)">
+            Delete
+          </button>
+        </div>
+
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+
+
