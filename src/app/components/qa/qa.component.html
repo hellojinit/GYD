@@ -2,12 +2,14 @@
 
 
   <ul>
-    <li>
+    <li class="has-subnav">
       <a routerLink="/home">
-        <mat-icon [ngStyle]="{'color':'White'}">share</mat-icon>
+        <img class="sidebar-logo" src="assets/logoGYD.png" class="nav-icon" style="display: block; width: 60px; height: 36px;">
         <span class="nav-text">GYD</span>
       </a>
     </li>
+
+
     <hr class="sidebar-divider">
     <li class="has-subnav">
       <a routerLink="/dashboard">
@@ -90,27 +92,55 @@
 
 
 
-<h2>Q & A!</h2>
 
-<div class = "text">
-  <mat-form-field class="text-field" style="width: 35%">
-    <mat-label>Text for Q & A</mat-label>
-    <textarea  matInput [(ngModel)]="textInput" name="input" rows="20" cols = "30"></textarea>
-  </mat-form-field>
-  <mat-form-field class="question-input"  style="width: 35%">
-    <mat-label>Your Question</mat-label>
-    <textarea matInput [(ngModel)]="questionInput" name="output" rows="20" cols = "30">{{questionInput}}</textarea>
-  </mat-form-field>
-  <mat-form-field class="text-field-output"  style="width: 35%">
-    <mat-label>Your Question</mat-label>
-    <textarea matInput [(ngModel)]="textOutput" name="output" rows="20" cols = "30">{{textOutput}}</textarea>
-  </mat-form-field>
-</div>
-<div class="actionbuttons">
-  <div class="obuttons">
-    <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="this.isButtonDisabled">
-      Ask!
-    </button>
+<!--<h2>Q & A!</h2>-->
+
+<!--<div class = "text">-->
+<!--  <mat-form-field class="text-field" style="width: 35%">-->
+<!--    <mat-label>Text for Q & A</mat-label>-->
+<!--    <textarea  matInput [(ngModel)]="textInput" name="input" rows="20" cols = "30"></textarea>-->
+<!--  </mat-form-field>-->
+<!--  <mat-form-field class="question-input"  style="width: 35%">-->
+<!--    <mat-label>Your Question</mat-label>-->
+<!--    <textarea matInput [(ngModel)]="questionInput" name="output" rows="20" cols = "30">{{questionInput}}</textarea>-->
+<!--  </mat-form-field>-->
+<!--  <mat-form-field class="text-field-output"  style="width: 35%">-->
+<!--    <mat-label>Your Question</mat-label>-->
+<!--    <textarea matInput [(ngModel)]="textOutput" name="output" rows="20" cols = "30">{{textOutput}}</textarea>-->
+<!--  </mat-form-field>-->
+<!--</div>-->
+<!--<div class="actionbuttons">-->
+<!--  <div class="obuttons">-->
+<!--    <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="this.isButtonDisabled">-->
+<!--      Ask!-->
+<!--    </button>-->
+<!--  </div>-->
+<!--</div>-->
+
+<div class="container">
+  <div class="title">Question & Answer</div>
+  <div class="text">
+    <mat-form-field class="text-field">
+      <mat-label>Text</mat-label>
+      <textarea matInput [(ngModel)]="textInput" name="input" rows="10" cols="60"></textarea>
+    </mat-form-field>
+    <div class="output">
+      <mat-form-field class="text-field-output">
+        <mat-label>Answer</mat-label>
+        <textarea matInput [(ngModel)]="textOutput" name="output" rows="10" cols="60">{{textOutput}}</textarea>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="chat">
+    <mat-form-field class="question-input">
+      <mat-label>Your Question</mat-label>
+      <div class="question-input-wrapper">
+        <textarea matInput [(ngModel)]="questionInput" name="output" rows="2" cols="60">{{questionInput}}</textarea>
+        <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="this.isButtonDisabled">
+          Ask!
+        </button>
+      </div>
+    </mat-form-field>
   </div>
 </div>
-
+<div class="actionbuttons"></div>

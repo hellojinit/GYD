@@ -36,7 +36,7 @@ mat-icon {
 .main-menu {
   background: #000000;
   /*border-right:1px solid #4c0170;*/
-  position:absolute;
+  position:fixed;
   top:0;
   bottom:0;
   height:100%;

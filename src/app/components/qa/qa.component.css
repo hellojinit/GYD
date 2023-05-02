@@ -36,7 +36,7 @@ mat-icon {
 .main-menu {
   background: #000000;
   /*border-right:1px solid #4c0170;*/
-  position:absolute;
+  position:fixed;
   top:0;
   bottom:0;
   height:100%;
@@ -133,3 +133,82 @@ nav ul,nav li {
   src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff');
 }
 
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.title {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  text-color: CadetBlue;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: cadetblue;
+
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  padding-right: 1rem;
+}
+
+.output {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 60%;
+  height: 100%;
+  padding-left: 1rem;
+}
+.question-input-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.actionbuttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ask-button {
+  margin-left: 1rem;
+}
+
+.text-field,
+.question-input,
+.text-field-output {
+  width: 100%;
+}
+
+.text-field textarea,
+.text-field-output textarea {
+  resize: both;
+}
+
+.mat-form-field {
+  margin-bottom: 1rem;
+}
+
+textarea {
+  resize: none;
+}

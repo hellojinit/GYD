@@ -133,3 +133,30 @@ nav ul,nav li {
   src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff');
 }
 
+
+
+h2 {
+  padding-top: 1em;
+  font-size: 2em;
+  font-family: "SF Pro", sans-serif;
+  color: burlywood;
+}
+
+.card-helper {
+  justify-content: flex-end;
+}
+
+h1 {
+  color: burlywood;
+}
+
+.example-card {
+  color: #ECEFF1;
+  background: #333333;
+  /*padding: 3%;*/
+  margin-top: 3vw;
+  margin-bottom: 3vw;
+  margin-left: 15vw;
+  width: 70vw;
+  border-radius: 20px;
+}

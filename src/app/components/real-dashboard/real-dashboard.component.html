@@ -3,19 +3,13 @@
 
   <ul>
     <li class="has-subnav">
-      <a routerLink="/home" style="text-align: center;">
-        <img class="sidebar-logo" src="assets/logo.png" class="nav-icon">
+      <a routerLink="/home">
+        <img class="sidebar-logo" src="assets/logoGYD.png" class="nav-icon" style="display: block; width: 60px; height: 36px;">
         <span class="nav-text">GYD</span>
       </a>
     </li>
 
-    <style>
-      .nav-icon {
-        display: block;
-        width: 24px;
-        height: 24px;
-      }
-    </style>
+
     <hr class="sidebar-divider">
     <li class="has-subnav">
       <a routerLink="/dashboard">
@@ -155,6 +149,17 @@
             Upload, write, or paste any text and GYD will give you a knowledge graph.
           </p>
           <button cButton color="light" routerLink="/knowledge-graph">Graph</button>
+        </c-card-body>
+      </c-card>
+
+      <c-card style="background-color: cadetblue; width: 35%;">
+        <video cCardImg="top" src="./assets/qna.mp4" autoplay muted loop></video>
+        <c-card-body>
+          <h5 cCardTitle style="color: whitesmoke">Q&A</h5>
+          <p cCardText style="color: whitesmoke">
+            Ask any question on the given text.
+          </p>
+          <button cButton color="light" routerLink="/qa">Ask</button>
         </c-card-body>
       </c-card>
   <!--    </c-col>-->

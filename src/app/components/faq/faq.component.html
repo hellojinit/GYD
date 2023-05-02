@@ -2,12 +2,14 @@
 
 
   <ul>
-    <li>
+    <li class="has-subnav">
       <a routerLink="/home">
-        <mat-icon [ngStyle]="{'color':'White'}">share</mat-icon>
+        <img class="sidebar-logo" src="assets/logoGYD.png" class="nav-icon" style="display: block; width: 60px; height: 36px;">
         <span class="nav-text">GYD</span>
       </a>
     </li>
+
+
     <hr class="sidebar-divider">
     <li class="has-subnav">
       <a routerLink="/dashboard">
@@ -88,6 +90,24 @@
   </ul>
 </nav>
 
-
-
 <h2>Frequently Asked Questions</h2>
+<mat-card class="example-card">
+  <mat-card-content>
+    <h1>Q: Is GYD free?</h1>
+    <h3>A: Yes, GYD is 100% free for all users at the moment. If you would like to help GYD, we are open to donations :)</h3>
+  </mat-card-content>
+</mat-card>
+<mat-card class="example-card">
+  <mat-card-content>
+    <h1>Q: Do you sell any of my data?</h1>
+    <h3>A: No, here at GYD we prioritize our user's privacy and security over anything else. GYD is firebase hosted with a
+      SSL certificate. All data is encrypted to and from the server. Additionally, we do not use your data to train our machine
+    learning models. We never save your password and you can delete all your history in a click of a button. </h3>
+  </mat-card-content>
+</mat-card>
+<mat-card class="example-card">
+  <mat-card-content>
+    <h1>Q: How do we contact you?</h1>
+    <h3>A: All the creator's emails are found under the About Us section in the Home page.</h3>
+  </mat-card-content>
+</mat-card>
